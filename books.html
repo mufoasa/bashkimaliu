@@ -1,0 +1,1097 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books & Publications - Dr. Bashkim Aliu</title>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1a365d;
+            --secondary-color: #2d5a87;
+            --accent-color: #c49b61;
+            --text-primary: #2d3748;
+            --text-secondary: #4a5568;
+            --text-light: #718096;
+            --background-light: #f7fafc;
+            --background-white: #ffffff;
+            --border-color: #e2e8f0;
+            --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--background-light);
+        }
+
+        .serif {
+            font-family: 'Crimson Text', Georgia, serif;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: var(--background-white);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: var(--shadow-sm);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+            .logo .title {
+                font-size: 0.875rem;
+                font-weight: 400;
+                color: var(--text-secondary);
+                display: block;
+                margin-top: -2px;
+            }
+
+        .language-switcher {
+            display: flex;
+            gap: 4px;
+            background: var(--background-light);
+            padding: 4px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .lang-btn {
+            padding: 6px 12px;
+            border: none;
+            background: transparent;
+            color: var(--text-secondary);
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 0.875rem;
+            transition: all 0.2s ease;
+        }
+
+            .lang-btn.active,
+            .lang-btn:hover {
+                background: var(--background-white);
+                color: var(--primary-color);
+                box-shadow: var(--shadow-sm);
+            }
+
+        /* Navigation */
+        nav {
+            background: var(--primary-color);
+            border-top: 1px solid var(--secondary-color);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 0;
+        }
+
+            .nav-menu li {
+                margin: 0;
+            }
+
+            .nav-menu a {
+                color: rgba(255, 255, 255, 0.9);
+                text-decoration: none;
+                font-weight: 500;
+                font-size: 0.875rem;
+                padding: 1rem 1.5rem;
+                display: block;
+                transition: all 0.2s ease;
+                border-bottom: 3px solid transparent;
+            }
+
+                .nav-menu a:hover,
+                .nav-menu a.active {
+                    color: white;
+                    background: rgba(255, 255, 255, 0.1);
+                    border-bottom-color: var(--accent-color);
+                }
+
+        /* Main Content */
+        main {
+            margin-top: 120px;
+            background: var(--background-white);
+            min-height: calc(100vh - 120px);
+        }
+
+        .page-header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+            .page-header h1 {
+                color: white;
+                font-size: 3rem;
+                margin-bottom: 1rem;
+            }
+
+            .page-header p {
+                font-size: 1.25rem;
+                color: rgba(255, 255, 255, 0.9);
+                max-width: 600px;
+                margin: 0 auto;
+            }
+
+        section {
+            padding: 5rem 0;
+        }
+
+        h1, h2, h3, h4 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+            letter-spacing: -0.025em;
+        }
+
+            h2::after {
+                content: '';
+                position: absolute;
+                bottom: -15px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 60px;
+                height: 2px;
+                background: var(--accent-color);
+            }
+
+        p {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        /* Language Content */
+        .lang-content {
+            display: none;
+        }
+
+            .lang-content.active {
+                display: block;
+            }
+
+        /* Books Grid */
+        .books-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .book-card {
+            background: var(--background-white);
+            border-radius: 12px;
+            box-shadow: var(--shadow-md);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid var(--border-color);
+        }
+
+            .book-card:hover {
+                transform: translateY(-4px);
+                box-shadow: var(--shadow-lg);
+            }
+
+        .book-cover-container {
+            height: 300px;
+            background: var(--background-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .book-cover {
+            width: 200px;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .book-info {
+            padding: 2rem;
+        }
+
+            .book-info h3 {
+                color: var(--primary-color);
+                margin-bottom: 1rem;
+                font-size: 1.25rem;
+            }
+
+        .book-meta {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+            .book-meta span {
+                font-size: 0.75rem;
+                color: var(--text-light);
+                background: var(--background-light);
+                padding: 0.25rem 0.75rem;
+                border-radius: 12px;
+                text-transform: uppercase;
+                font-weight: 500;
+            }
+
+        .book-description {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .buy-button {
+            background: var(--accent-color);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            width: 100%;
+            justify-content: center;
+        }
+
+            .buy-button:hover {
+                background: #b8935a;
+                transform: translateY(-1px);
+                box-shadow: var(--shadow-md);
+            }
+
+        /* Shop Banner */
+        .shop-banner {
+            background: var(--primary-color);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+            .shop-banner h2 {
+                color: white;
+                margin-bottom: 1rem;
+            }
+
+            .shop-banner p {
+                color: rgba(255, 255, 255, 0.9);
+                margin-bottom: 2rem;
+            }
+
+        .shop-link {
+            background: var(--accent-color);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.2s ease;
+        }
+
+            .shop-link:hover {
+                background: #b8935a;
+                transform: translateY(-2px);
+                box-shadow: var(--shadow-lg);
+            }
+
+        /* Footer */
+        footer {
+            background: var(--primary-color);
+            color: white;
+            padding: 3rem 0 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            line-height: 1.6;
+        }
+
+            .footer-section a:hover {
+                color: white;
+            }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: 2rem;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 0.75rem 0;
+            }
+
+            .nav-menu {
+                flex-direction: column;
+                align-items: center;
+            }
+
+                .nav-menu a {
+                    padding: 0.75rem 1rem;
+                }
+
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .books-grid {
+                grid-template-columns: 1fr;
+            }
+
+            main {
+                margin-top: 160px;
+            }
+
+            section {
+                padding: 3rem 0;
+            }
+        }
+    
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+    }
+
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-menu.open {
+        display: flex;
+    }
+}
+
+</style>
+</head>
+<body>
+    <header>
+
+        <div class="container">
+            <div class="header-content">
+    <button class="menu-toggle" onclick="toggleMenu()">&#9776;</button>
+                <a href="index.html" class="logo">
+                    Dr. Bashkim Aliu
+                    <span class="title">Albanian Islamic Scholar & Imam</span>
+                </a>
+                <div class="language-switcher">
+                    <button class="lang-btn active" onclick="switchLanguage('en')">EN</button>
+                    <button class="lang-btn" onclick="switchLanguage('sq')">SQ</button>
+                    <button class="lang-btn" onclick="switchLanguage('de')">DE</button>
+                </div>
+            </div>
+        </div>
+        <nav>
+            <div class="container">
+                <ul class="nav-menu">
+                    <li>
+                        <a href="index.html">
+                            <span class="lang-content active" data-lang="en">Home</span>
+                            <span class="lang-content" data-lang="sq">Kreu</span>
+                            <span class="lang-content" data-lang="de">Startseite</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="index.html#biography">
+                            <span class="lang-content active" data-lang="en">Biography</span>
+                            <span class="lang-content" data-lang="sq">Biografia</span>
+                            <span class="lang-content" data-lang="de">Biografie</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="books.html" class="active">
+                            <span class="lang-content active" data-lang="en">Books</span>
+                            <span class="lang-content" data-lang="sq">Libra</span>
+                            <span class="lang-content" data-lang="de">Bücher</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="index.html#lectures">
+                            <span class="lang-content active" data-lang="en">Lectures</span>
+                            <span class="lang-content" data-lang="sq">Ligjërata</span>
+                            <span class="lang-content" data-lang="de">Vorträge</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="gallery.html">
+                            <span class="lang-content active" data-lang="en">Gallery</span>
+                            <span class="lang-content" data-lang="sq">Galeria</span>
+                            <span class="lang-content" data-lang="de">Galerie</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="index.html#contact">
+                            <span class="lang-content active" data-lang="en">Contact</span>
+                            <span class="lang-content" data-lang="sq">Kontakti</span>
+                            <span class="lang-content" data-lang="de">Kontakt</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <div class="lang-content active" data-lang="en">
+                    <h1 class="serif">Books & Publications</h1>
+                    <p>Explore Dr. Bashkim Aliu's extensive collection of Islamic literature, translations, and scholarly works that bridge traditional Islamic knowledge with contemporary European Muslim life.</p>
+                </div>
+                <div class="lang-content" data-lang="sq">
+                    <h1 class="serif">Libra dhe Publikime</h1>
+                    <p>Eksploroni koleksionin e gjerë të Dr. Bashkim Aliu të literaturës islame, përkthimeve dhe veprave shkencore që lidhin njohuritë tradicionale islame me jetën bashkëkohore myslimane evropiane.</p>
+                </div>
+                <div class="lang-content" data-lang="de">
+                    <h1 class="serif">Bücher & Publikationen</h1>
+                    <p>Entdecken Sie Dr. Bashkim Alius umfangreiche Sammlung islamischer Literatur, Übersetzungen und wissenschaftlicher Werke, die traditionelles islamisches Wissen mit dem zeitgenössischen europäischen muslimischen Leben verbinden.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Books Section -->
+        <section>
+            <div class="container">
+                <div class="lang-content active" data-lang="en">
+                    <h2 class="serif">Featured Publications</h2>
+
+                    <div class="books-grid">
+                        <div class="book-card">
+                            <div class="book-cover-container">
+                                <img src="https://nun.com.mk/cdn/shop/products/Pishtari-800x451.jpg?v=1600235061?height=280&width=200" alt="Pishtari Ndriçues" class="book-cover">
+                            </div>
+                            <div class="book-info">
+                                <h3>"Pishtari Ndriçues" (The Illuminating Guide)</h3>
+                                <div class="book-meta">
+                                    <span>Biography</span>
+                                    <span>Albanian</span>
+                                    <span>Prophet Muhammad</span>
+                                </div>
+                                <p class="book-description">A comprehensive biography of Prophet Muhammad, written specifically for Albanian-speaking Muslims. This work presents the life and teachings of the Prophet in a manner that resonates with contemporary Albanian Muslim communities.</p>
+                                <a href="https://islamshop.ch/product-tag/dr-bashkim-aliu/" target="_blank" class="buy-button">
+                                    <span>🛒</span>
+                                    Buy Now
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="book-card">
+                            <div class="book-cover-container">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSM1amLtrXcD6HukU2BWYOEWXvhGNIH0X-tOw&s?height=280&width=200" alt="Kovid-19" class="book-cover">
+                            </div>
+                            <div class="book-info">
+                                <h3>"Kovid-19" (COVID-19)</h3>
+                                <div class="book-meta">
+                                    <span>Contemporary</span>
+                                    <span>Albanian</span>
+                                    <span>Pandemic Response</span>
+                                </div>
+                                <p class="book-description">Chronicles the work and experiences of imams during the COVID-19 pandemic. This timely publication documents how Islamic religious leaders adapted to unprecedented challenges.</p>
+                                <a href="https://islamshop.ch/product-tag/dr-bashkim-aliu/" target="_blank" class="buy-button">
+                                    <span>🛒</span>
+                                    Buy Now
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="book-card">
+                            <div class="book-cover-container">
+                                <img src="https://www.cicra.ch/wp-content/uploads/2024/03/Vendimet-dhe-Fetivate.png?height=280&width=200" alt="Gjurmimet dhe Fetvatë" class="book-cover">
+                            </div>
+                            <div class="book-info">
+                                <h3>"Gjurmimet dhe Fetvatë" (Investigations and Fatwas)</h3>
+                                <div class="book-meta">
+                                    <span>Jurisprudence</span>
+                                    <span>Albanian</span>
+                                    <span>Contemporary Rulings</span>
+                                </div>
+                                <p class="book-description">A compilation of contemporary Islamic rulings specifically addressing the needs of European Muslims. Provides practical guidance on religious matters in European contexts.</p>
+                                <a href="https://islamshop.ch/product-tag/dr-bashkim-aliu/" target="_blank" class="buy-button">
+                                    <span>🛒</span>
+                                    Buy Now
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="book-card">
+                            <div class="book-cover-container">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsgnrtnSpFcaL4Ul74_S1xxW9IvDNo6FcpeA&s?height=280&width=200" alt="Islamic Finance Guide" class="book-cover">
+                            </div>
+                            <div class="book-info">
+                                <h3>"Udhëzuesi i Financave Islame" (Islamic Finance Guide)</h3>
+                                <div class="book-meta">
+                                    <span>Finance</span>
+                                    <span>Albanian</span>
+                                    <span>Economics</span>
+                                </div>
+                                <p class="book-description">A comprehensive guide to Islamic banking and finance principles for Albanian-speaking Muslims living in Europe. Addresses practical financial decisions according to Islamic law.</p>
+                                <a href="https://islamshop.ch/product-tag/dr-bashkim-aliu/" target="_blank" class="buy-button">
+                                    <span>🛒</span>
+                                    Buy Now
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="book-card">
+                            <div class="book-cover-container">
+                                <img src="https://furkan.com.mk/wp-content/uploads/2018/02/Imam-Buhariu-800x451.jpg?height=280&width=200" alt="Prayer and Worship" class="book-cover">
+                            </div>
+                            <div class="book-info">
+                                <h3>"Namazi dhe Adhurimi" (Prayer and Worship)</h3>
+                                <div class="book-meta">
+                                    <span>Worship</span>
+                                    <span>Albanian</span>
+                                    <span>Practical Guide</span>
+                                </div>
+                                <p class="book-description">A detailed guide to Islamic prayer and worship practices, written to help Albanian Muslims maintain their religious obligations while living in European societies.</p>
+                                <a href="https://islamshop.ch/product-tag/dr-bashkim-aliu/" target="_blank" class="buy-button">
+                                    <span>🛒</span>
+                                    Buy Now
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="book-card">
+                            <div class="book-cover-container">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNvant7gOqSOQVBd6rT0Zdbizxhq6TWZouVw&s?height=280&width=200" alt="Family in Islam" class="book-cover">
+                            </div>
+                            <div class="book-info">
+                                <h3>"Familja në Islam" (Family in Islam)</h3>
+                                <div class="book-meta">
+                                    <span>Family</span>
+                                    <span>Albanian</span>
+                                    <span>Social Issues</span>
+                                </div>
+                                <p class="book-description">Explores Islamic family values and their application in contemporary European contexts. Addresses marriage, parenting, and family relationships from an Islamic perspective.</p>
+                                <a href="https://islamshop.ch/product-tag/dr-bashkim-aliu/" target="_blank" class="buy-button">
+                                    <span>🛒</span>
+                                    Buy Now
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lang-content" data-lang="sq">
+                    <h2 class="serif">Publikime të Zgjedhura</h2>
+
+                    <div class="books-grid">
+                        <div class="book-card">
+                            <div class="book-cover-container">
+                                <img src="/placeholder.svg?height=280&width=200" alt="Pishtari Ndriçues" class="book-cover">
+                            </div>
+                            <div class="book-info">
+                                <h3>"Pishtari Ndriçues"</h3>
+                                <div class="book-meta">
+                                    <span>Biografi</span>
+                                    <span>Shqip</span>
+                                    <span>Profeti Muhamed</span>
+                                </div>
+                                <p class="book-description">Një biografi gjithëpërfshirëse e Profetit Muhamed, e shkruar specifikisht për myslimanët shqipfolës. Kjo vepër prezanton jetën dhe mësimet e Profetit në një mënyrë që rezonon me komunitetet bashkëkohore myslimane shqiptare.</p>
+                                <a href="https://islamshop.ch/product-tag/dr-bashkim-aliu/" target="_blank" class="buy-button">
+                                    <span>🛒</span>
+                                    Blej Tani
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="book-card">
+                            <div class="book-cover-container">
+                                <img src="/placeholder.svg?height=280&width=200" alt="Kovid-19" class="book-cover">
+                            </div>
+                            <div class="book-info">
+                                <h3>"Kovid-19"</h3>
+                                <div class="book-meta">
+                                    <span>Bashkëkohor</span>
+                                    <span>Shqip</span>
+                                    <span>Përgjigja ndaj Pandemisë</span>
+                                </div>
+                                <p class="book-description">Kronikë e punës dhe përvojave të imamëve gjatë pandemisë COVID-19. Ky publikim i kohës dokumenton se si udhëheqësit fetarë islamë u përshtaten me sfidat e paprecedenta.</p>
+                                <a href="https://islamshop.ch/product-tag/dr-bashkim-aliu/" target="_blank" class="buy-button">
+                                    <span>🛒</span>
+                                    Blej Tani
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="book-card">
+                            <div class="book-cover-container">
+                                <img src="/placeholder.svg?height=280&width=200" alt="Gjurmimet dhe Fetvatë" class="book-cover">
+                            </div>
+                            <div class="book-info">
+                                <h3>"Gjurmimet dhe Fetvatë"</h3>
+                                <div class="book-meta">
+                                    <span>Jurisprudencë</span>
+                                    <span>Shqip</span>
+                                    <span>Vendime Bashkëkohore</span>
+                                </div>
+                                <p class="book-description">Një përmbledhje vendimesh bashkëkohore islame që adresojnë specifikisht nevojat e myslimanëve evropianë. Ofron udhëzime praktike mbi çështjet fetare në kontekste evropiane.</p>
+                                <a href="https://islamshop.ch/product-tag/dr-bashkim-aliu/" target="_blank" class="buy-button">
+                                    <span>🛒</span>
+                                    Blej Tani
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="book-card">
+                            <div class="book-cover-container">
+                                <img src="/placeholder.svg?height=280&width=200" alt="Udhëzuesi i Financave Islame" class="book-cover">
+                            </div>
+                            <div class="book-info">
+                                <h3>"Udhëzuesi i Financave Islame"</h3>
+                                <div class="book-meta">
+                                    <span>Financa</span>
+                                    <span>Shqip</span>
+                                    <span>Ekonomi</span>
+                                </div>
+                                <p class="book-description">Një udhëzues gjithëpërfshirës për parimet e bankave dhe financave islame për myslimanët shqipfolës që jetojnë në Evropë. Adreson vendimet praktike financiare sipas ligjit islam.</p>
+                                <a href="https://islamshop.ch/product-tag/dr-bashkim-aliu/" target="_blank" class="buy-button">
+                                    <span>🛒</span>
+                                    Blej Tani
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="book-card">
+                            <div class="book-cover-container">
+                                <img src="/placeholder.svg?height=280&width=200" alt="Namazi dhe Adhurimi" class="book-cover">
+                            </div>
+                            <div class="book-info">
+                                <h3>"Namazi dhe Adhurimi"</h3>
+                                <div class="book-meta">
+                                    <span>Adhurim</span>
+                                    <span>Shqip</span>
+                                    <span>Udhëzues Praktik</span>
+                                </div>
+                                <p class="book-description">Një udhëzues i detajuar për praktikat e namazit dhe adhurimit islam, i shkruar për të ndihmuar myslimanët shqiptarë të ruajnë detyrimet e tyre fetare duke jetuar në shoqëritë evropiane.</p>
+                                <a href="https://islamshop.ch/product-tag/dr-bashkim-aliu/" target="_blank" class="buy-button">
+                                    <span>🛒</span>
+                                    Blej Tani
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="book-card">
+                            <div class="book-cover-container">
+                                <img src="/placeholder.svg?height=280&width=200" alt="Familja në Islam" class="book-cover">
+                            </div>
+                            <div class="book-info">
+                                <h3>"Familja në Islam"</h3>
+                                <div class="book-meta">
+                                    <span>Familje</span>
+                                    <span>Shqip</span>
+                                    <span>Çështje Sociale</span>
+                                </div>
+                                <p class="book-description">Eksploron vlerat familjare islame dhe aplikimin e tyre në kontekste bashkëkohore evropiane. Adreson martesën, prindërimin dhe marrëdhëniet familjare nga një perspektivë islame.</p>
+                                <a href="https://islamshop.ch/product-tag/dr-bashkim-aliu/" target="_blank" class="buy-button">
+                                    <span>🛒</span>
+                                    Blej Tani
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lang-content" data-lang="de">
+                    <h2 class="serif">Ausgewählte Publikationen</h2>
+
+                    <div class="books-grid">
+                        <div class="book-card">
+                            <div class="book-cover-container">
+                                <img src="/placeholder.svg?height=280&width=200" alt="Pishtari Ndriçues" class="book-cover">
+                            </div>
+                            <div class="book-info">
+                                <h3>"Pishtari Ndriçues" (Der Erleuchtende Führer)</h3>
+                                <div class="book-meta">
+                                    <span>Biografie</span>
+                                    <span>Albanisch</span>
+                                    <span>Prophet Muhammad</span>
+                                </div>
+                                <p class="book-description">Eine umfassende Biografie des Propheten Muhammad, speziell für albanischsprachige Muslime geschrieben. Dieses Werk präsentiert das Leben und die Lehren des Propheten auf eine Weise, die bei zeitgenössischen albanischen muslimischen Gemeinschaften Anklang findet.</p>
+                                <a href="https://islamshop.ch/product-tag/dr-bashkim-aliu/" target="_blank" class="buy-button">
+                                    <span>🛒</span>
+                                    Jetzt Kaufen
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="book-card">
+                            <div class="book-cover-container">
+                                <img src="/placeholder.svg?height=280&width=200" alt="Kovid-19" class="book-cover">
+                            </div>
+                            <div class="book-info">
+                                <h3>"Kovid-19" (COVID-19)</h3>
+                                <div class="book-meta">
+                                    <span>Zeitgenössisch</span>
+                                    <span>Albanisch</span>
+                                    <span>Pandemie-Reaktion</span>
+                                </div>
+                                <p class="book-description">Chronik der Arbeit und Erfahrungen von Imamen während der COVID-19-Pandemie. Diese zeitgemäße Publikation dokumentiert, wie islamische religiöse Führer sich an beispiellose Herausforderungen anpassten.</p>
+                                <a href="https://islamshop.ch/product-tag/dr-bashkim-aliu/" target="_blank" class="buy-button">
+                                    <span>🛒</span>
+                                    Jetzt Kaufen
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="book-card">
+                            <div class="book-cover-container">
+                                <img src="/placeholder.svg?height=280&width=200" alt="Gjurmimet dhe Fetvatë" class="book-cover">
+                            </div>
+                            <div class="book-info">
+                                <h3>"Gjurmimet dhe Fetvatë" (Untersuchungen und Fatwas)</h3>
+                                <div class="book-meta">
+                                    <span>Rechtsprechung</span>
+                                    <span>Albanisch</span>
+                                    <span>Zeitgenössische Urteile</span>
+                                </div>
+                                <p class="book-description">Eine Sammlung zeitgenössischer islamischer Urteile, die speziell die Bedürfnisse europäischer Muslime ansprechen. Bietet praktische Anleitung zu religiösen Angelegenheiten in europäischen Kontexten.</p>
+                                <a href="https://islamshop.ch/product-tag/dr-bashkim-aliu/" target="_blank" class="buy-button">
+                                    <span>🛒</span>
+                                    Jetzt Kaufen
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="book-card">
+                            <div class="book-cover-container">
+                                <img src="/placeholder.svg?height=280&width=200" alt="Islamischer Finanzführer" class="book-cover">
+                            </div>
+                            <div class="book-info">
+                                <h3>"Udhëzuesi i Financave Islame" (Islamischer Finanzführer)</h3>
+                                <div class="book-meta">
+                                    <span>Finanzen</span>
+                                    <span>Albanisch</span>
+                                    <span>Wirtschaft</span>
+                                </div>
+                                <p class="book-description">Ein umfassender Leitfaden zu islamischen Bank- und Finanzprinzipien für albanischsprachige Muslime in Europa. Behandelt praktische Finanzentscheidungen nach islamischem Recht.</p>
+                                <a href="https://islamshop.ch/product-tag/dr-bashkim-aliu/" target="_blank" class="buy-button">
+                                    <span>🛒</span>
+                                    Jetzt Kaufen
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="book-card">
+                            <div class="book-cover-container">
+                                <img src="/placeholder.svg?height=280&width=200" alt="Gebet und Anbetung" class="book-cover">
+                            </div>
+                            <div class="book-info">
+                                <h3>"Namazi dhe Adhurimi" (Gebet und Anbetung)</h3>
+                                <div class="book-meta">
+                                    <span>Anbetung</span>
+                                    <span>Albanisch</span>
+                                    <span>Praktischer Leitfaden</span>
+                                </div>
+                                <p class="book-description">Ein detaillierter Leitfaden zu islamischen Gebets- und Anbetungspraktiken, geschrieben, um albanischen Muslimen zu helfen, ihre religiösen Verpflichtungen zu erfüllen, während sie in europäischen Gesellschaften leben.</p>
+                                <a href="https://islamshop.ch/product-tag/dr-bashkim-aliu/" target="_blank" class="buy-button">
+                                    <span>🛒</span>
+                                    Jetzt Kaufen
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="book-card">
+                            <div class="book-cover-container">
+                                <img src="/placeholder.svg?height=280&width=200" alt="Familie im Islam" class="book-cover">
+                            </div>
+                            <div class="book-info">
+                                <h3>"Familja në Islam" (Familie im Islam)</h3>
+                                <div class="book-meta">
+                                    <span>Familie</span>
+                                    <span>Albanisch</span>
+                                    <span>Soziale Themen</span>
+                                </div>
+                                <p class="book-description">Erforscht islamische Familienwerte und ihre Anwendung in zeitgenössischen europäischen Kontexten. Behandelt Ehe, Erziehung und Familienbeziehungen aus islamischer Perspektive.</p>
+                                <a href="https://islamshop.ch/product-tag/dr-bashkim-aliu/" target="_blank" class="buy-button">
+                                    <span>🛒</span>
+                                    Jetzt Kaufen
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Shop Banner -->
+        <section class="shop-banner">
+            <div class="container">
+                <div class="lang-content active" data-lang="en">
+                    <h2 class="serif">Visit Our Online Bookstore</h2>
+                    <p>Discover the complete collection of Dr. Bashkim Aliu's works and other Islamic literature at IslamShop.ch</p>
+                    <a href="https://islamshop.ch/product-tag/dr-bashkim-aliu/" target="_blank" class="shop-link">
+                        <span>🏪</span>
+                        Browse All Books
+                    </a>
+                </div>
+                <div class="lang-content" data-lang="sq">
+                    <h2 class="serif">Vizitoni Librarin tonë Online</h2>
+                    <p>Zbuloni koleksionin e plotë të veprave të Dr. Bashkim Aliu dhe literaturë tjetër islame në IslamShop.ch</p>
+                    <a href="https://islamshop.ch/product-tag/dr-bashkim-aliu/" target="_blank" class="shop-link">
+                        <span>🏪</span>
+                        Shfleto të Gjithë Librat
+                    </a>
+                </div>
+                <div class="lang-content" data-lang="de">
+                    <h2 class="serif">Besuchen Sie unsere Online-Buchhandlung</h2>
+                    <p>Entdecken Sie die vollständige Sammlung von Dr. Bashkim Alius Werken und andere islamische Literatur bei IslamShop.ch</p>
+                    <a href="https://islamshop.ch/product-tag/dr-bashkim-aliu/" target="_blank" class="shop-link">
+                        <span>🏪</span>
+                        Alle Bücher Durchsuchen
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="lang-content active" data-lang="en">
+                        <h4>Dr. Bashkim Aliu</h4>
+                        <p>Albanian Islamic Scholar, Imam, and community leader dedicated to serving Muslim communities in Switzerland while preserving Albanian Islamic heritage.</p>
+                    </div>
+                    <div class="lang-content" data-lang="sq">
+                        <h4>Dr. Bashkim Aliu</h4>
+                        <p>Dijetar Islam Shqiptar, Imam dhe udhëheqës komuniteti i përkushtuar për të shërbyer komunitetet myslimane në Zvicër duke ruajtur trashëgiminë islame shqiptare.</p>
+                    </div>
+                    <div class="lang-content" data-lang="de">
+                        <h4>Dr. Bashkim Aliu</h4>
+                        <p>Albanischer islamischer Gelehrter, Imam und Gemeindeleiter, der sich dem Dienst an muslimischen Gemeinschaften in der Schweiz widmet.</p>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <div class="lang-content active" data-lang="en">
+                        <h4>Quick Links</h4>
+                        <p><a href="index.html">Home</a></p>
+                        <p><a href="gallery.html">Photo Gallery</a></p>
+                        <p><a href="index.html#lectures">Lectures</a></p>
+                        <p><a href="index.html#contact">Contact</a></p>
+                    </div>
+                    <div class="lang-content" data-lang="sq">
+                        <h4>Lidhje të Shpejta</h4>
+                        <p><a href="index.html">Kreu</a></p>
+                        <p><a href="gallery.html">Galeria e Fotove</a></p>
+                        <p><a href="index.html#lectures">Ligjërata</a></p>
+                        <p><a href="index.html#contact">Kontakti</a></p>
+                    </div>
+                    <div class="lang-content" data-lang="de">
+                        <h4>Schnelllinks</h4>
+                        <p><a href="index.html">Startseite</a></p>
+                        <p><a href="gallery.html">Fotogalerie</a></p>
+                        <p><a href="index.html#lectures">Vorträge</a></p>
+                        <p><a href="index.html#contact">Kontakt</a></p>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <div class="lang-content active" data-lang="en">
+                        <h4>Publications</h4>
+                        <p>14+ Books Authored</p>
+                        <p>23+ Translations</p>
+                        <p>Available at IslamShop.ch</p>
+                        <p>Albanian & Arabic Literature</p>
+                    </div>
+                    <div class="lang-content" data-lang="sq">
+                        <h4>Publikime</h4>
+                        <p>14+ Libra të Shkruar</p>
+                        <p>23+ Përkthime</p>
+                        <p>Të Disponueshme në IslamShop.ch</p>
+                        <p>Literaturë Shqipe dhe Arabe</p>
+                    </div>
+                    <div class="lang-content" data-lang="de">
+                        <h4>Publikationen</h4>
+                        <p>14+ Verfasste Bücher</p>
+                        <p>23+ Übersetzungen</p>
+                        <p>Verfügbar bei IslamShop.ch</p>
+                        <p>Albanische & Arabische Literatur</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="lang-content active" data-lang="en">
+                    <p>&copy; 2024 Dr. Bashkim Aliu. All rights reserved. | Books available at <a href="https://islamshop.ch/product-tag/dr-bashkim-aliu/" target="_blank">IslamShop.ch</a></p>
+                </div>
+                <div class="lang-content" data-lang="sq">
+                    <p>&copy; 2024 Dr. Bashkim Aliu. Të gjitha të drejtat e rezervuara. | Librat e disponueshëm në <a href="https://islamshop.ch/product-tag/dr-bashkim-aliu/" target="_blank">IslamShop.ch</a></p>
+                </div>
+                <div class="lang-content" data-lang="de">
+                    <p>&copy; 2024 Dr. Bashkim Aliu. Alle Rechte vorbehalten. | Bücher verfügbar bei <a href="https://islamshop.ch/product-tag/dr-bashkim-aliu/" target="_blank">IslamShop.ch</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        let currentLang = 'en';
+
+        function switchLanguage(lang) {
+            // Hide all content with current language
+            const currentContent = document.querySelectorAll(`.lang-content[data-lang="${currentLang}"]`);
+            currentContent.forEach(element => {
+                element.classList.remove('active');
+            });
+
+            // Show all content with new language
+            const newContent = document.querySelectorAll(`.lang-content[data-lang="${lang}"]`);
+            newContent.forEach(element => {
+                element.classList.add('active');
+            });
+
+            // Update language buttons
+            const langButtons = document.querySelectorAll('.lang-btn');
+            langButtons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            // Update current language
+            currentLang = lang;
+
+            // Update document language attribute
+            document.documentElement.lang = lang;
+        }
+
+        // Add scroll effect to header
+        window.addEventListener('scroll', function () {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.boxShadow = 'var(--shadow-lg)';
+            } else {
+                header.style.boxShadow = 'var(--shadow-sm)';
+            }
+        });
+
+        // Add loading animation
+        window.addEventListener('load', function () {
+            document.body.style.opacity = '0';
+            document.body.style.transition = 'opacity 0.5s ease';
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+
+        // Add intersection observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all book cards
+        document.querySelectorAll('.book-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+
+<script>
+function toggleMenu() {
+    const navMenu = document.querySelector('.nav-menu');
+    navMenu.classList.toggle('open');
+}
+</script>
+
+</body>
+</html>
