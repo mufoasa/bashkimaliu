@@ -1,0 +1,1183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Bashkim Aliu - Albanian Islamic Scholar & Imam</title>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1a365d;
+            --secondary-color: #2d5a87;
+            --accent-color: #c49b61;
+            --text-primary: #2d3748;
+            --text-secondary: #4a5568;
+            --text-light: #718096;
+            --background-light: #f7fafc;
+            --background-white: #ffffff;
+            --border-color: #e2e8f0;
+            --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--background-light);
+        }
+
+        .serif {
+            font-family: 'Crimson Text', Georgia, serif;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: var(--background-white);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: var(--shadow-sm);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+            .logo .title {
+                font-size: 0.875rem;
+                font-weight: 400;
+                color: var(--text-secondary);
+                display: block;
+                margin-top: -2px;
+            }
+
+        .language-switcher {
+            display: flex;
+            gap: 4px;
+            background: var(--background-light);
+            padding: 4px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .lang-btn {
+            padding: 6px 12px;
+            border: none;
+            background: transparent;
+            color: var(--text-secondary);
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 0.875rem;
+            transition: all 0.2s ease;
+        }
+
+            .lang-btn.active,
+            .lang-btn:hover {
+                background: var(--background-white);
+                color: var(--primary-color);
+                box-shadow: var(--shadow-sm);
+            }
+
+        /* Navigation */
+        nav {
+            background: var(--primary-color);
+            border-top: 1px solid var(--secondary-color);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 0;
+        }
+
+            .nav-menu li {
+                margin: 0;
+            }
+
+            .nav-menu a {
+                color: rgba(255, 255, 255, 0.9);
+                text-decoration: none;
+                font-weight: 500;
+                font-size: 0.875rem;
+                padding: 1rem 1.5rem;
+                display: block;
+                transition: all 0.2s ease;
+                border-bottom: 3px solid transparent;
+            }
+
+                .nav-menu a:hover {
+                    color: white;
+                    background: rgba(255, 255, 255, 0.1);
+                    border-bottom-color: var(--accent-color);
+                }
+
+        /* Main Content */
+        main {
+            margin-top: 120px;
+            background: var(--background-white);
+            min-height: calc(100vh - 120px);
+        }
+
+        section {
+            padding: 5rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+            section:last-child {
+                border-bottom: none;
+            }
+
+        h1, h2, h3, h4 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 300;
+            text-align: center;
+            margin-bottom: 1rem;
+            letter-spacing: -0.025em;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+            letter-spacing: -0.025em;
+        }
+
+            h2::after {
+                content: '';
+                position: absolute;
+                bottom: -15px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 60px;
+                height: 2px;
+                background: var(--accent-color);
+            }
+
+        h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        h4 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        p {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        /* Language Content */
+        .lang-content {
+            display: none;
+        }
+
+            .lang-content.active {
+                display: block;
+            }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 6rem 0 8rem;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+            .hero::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="0.5" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+                opacity: 0.3;
+            }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-image {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 2rem;
+            display: block;
+            border: 4px solid rgba(255, 255, 255, 0.2);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .hero h1 {
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero .subtitle {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        .hero p {
+            font-size: 1.125rem;
+            max-width: 700px;
+            margin: 0 auto;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.6;
+        }
+
+        .credentials {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .credential {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            backdrop-filter: blur(10px);
+        }
+
+        /* Grid Layouts */
+        .grid {
+            display: grid;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .grid-2 {
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        }
+
+        .grid-3 {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+
+        .card {
+            background: var(--background-white);
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+            border: 1px solid var(--border-color);
+            position: relative;
+        }
+
+            .card:hover {
+                transform: translateY(-4px);
+                box-shadow: var(--shadow-lg);
+            }
+
+            .card h3 {
+                color: var(--primary-color);
+                margin-bottom: 1rem;
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+            }
+
+        .card-icon {
+            width: 24px;
+            height: 24px;
+            background: var(--accent-color);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        /* Statistics Section */
+        .stats {
+            background: var(--primary-color);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .stat-item {
+            padding: 2rem;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1.125rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* CTA Buttons */
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            background: var(--primary-color);
+            color: white;
+            padding: 0.75rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+        }
+
+            .btn:hover {
+                background: var(--secondary-color);
+                transform: translateY(-1px);
+                box-shadow: var(--shadow-md);
+            }
+
+        .btn-secondary {
+            background: var(--accent-color);
+        }
+
+            .btn-secondary:hover {
+                background: #b8935a;
+            }
+
+        /* Footer */
+        footer {
+            background: var(--primary-color);
+            color: white;
+            padding: 3rem 0 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            line-height: 1.6;
+        }
+
+            .footer-section a:hover {
+                color: white;
+            }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: 2rem;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 0.75rem 0;
+            }
+
+            .nav-menu {
+                flex-direction: column;
+                align-items: center;
+            }
+
+                .nav-menu a {
+                    padding: 0.75rem 1rem;
+                }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .hero {
+                padding: 4rem 0 5rem;
+            }
+
+                .hero .subtitle {
+                    font-size: 1.125rem;
+                }
+
+            .credentials {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            main {
+                margin-top: 160px;
+            }
+
+            section {
+                padding: 3rem 0;
+            }
+
+            .grid-2,
+            .grid-3 {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .card {
+                padding: 1.5rem;
+            }
+        }
+    
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+    }
+
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-menu.open {
+        display: flex;
+    }
+}
+
+</style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+    <button class="menu-toggle" onclick="toggleMenu()">&#9776;</button>
+                <a href="index.html" class="logo">
+                    Dr. Bashkim Aliu
+                    <span class="title">Albanian Islamic Scholar & Imam</span>
+                </a>
+                <div class="language-switcher">
+                    <button class="lang-btn active" onclick="switchLanguage('en')">EN</button>
+                    <button class="lang-btn" onclick="switchLanguage('sq')">SQ</button>
+                    <button class="lang-btn" onclick="switchLanguage('de')">DE</button>
+                </div>
+            </div>
+        </div>
+        <nav>
+            <div class="container">
+                <ul class="nav-menu">
+                    <li>
+                        <a href="index.html">
+                            <span class="lang-content active" data-lang="en">Home</span>
+                            <span class="lang-content" data-lang="sq">Kreu</span>
+                            <span class="lang-content" data-lang="de">Startseite</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#biography">
+                            <span class="lang-content active" data-lang="en">Biography</span>
+                            <span class="lang-content" data-lang="sq">Biografia</span>
+                            <span class="lang-content" data-lang="de">Biografie</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="books.html">
+                            <span class="lang-content active" data-lang="en">Books</span>
+                            <span class="lang-content" data-lang="sq">Libra</span>
+                            <span class="lang-content" data-lang="de">Bücher</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#lectures">
+                            <span class="lang-content active" data-lang="en">Lectures</span>
+                            <span class="lang-content" data-lang="sq">Ligjërata</span>
+                            <span class="lang-content" data-lang="de">Vorträge</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="gallery.html">
+                            <span class="lang-content active" data-lang="en">Gallery</span>
+                            <span class="lang-content" data-lang="sq">Galeria</span>
+                            <span class="lang-content" data-lang="de">Galerie</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#contact">
+                            <span class="lang-content active" data-lang="en">Contact</span>
+                            <span class="lang-content" data-lang="sq">Kontakti</span>
+                            <span class="lang-content" data-lang="de">Kontakt</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <!-- Home Section -->
+            <section id="home" class="hero">
+                <div class="hero-content">
+                    <img src="https://i.imgur.com/HOT4MeB.jpeg?height=180&width=180" alt="Dr. Bashkim Aliu" class="hero-image">
+
+                    <div class="lang-content active" data-lang="en">
+                        <h1 class="serif">Dr. Bashkim Aliu</h1>
+                        <p class="subtitle">Albanian Islamic Scholar, Imam & Community Leader</p>
+                        <div class="credentials">
+                            <span class="credential">PhD in Political Science</span>
+                            <span class="credential">Imam at Seebach Mosque</span>
+                            <span class="credential">KMShZ Vice President</span>
+                            <span class="credential">FIDS Central Presidency</span>
+                        </div>
+                        </br>
+                        <p>Distinguished Albanian Islamic scholar and imam serving the Muslim community in Switzerland. Dr. Aliu combines deep theological knowledge with sociological expertise to address the challenges facing Muslims in European societies, while actively supporting the Albanian diaspora through religious leadership and community engagement.</p>
+                    </div>
+
+                    <div class="lang-content" data-lang="sq">
+                        <h1 class="serif">Dr. Bashkim Aliu</h1>
+                        <p class="subtitle">Dijetar Islam Shqiptar, Imam dhe Udhëheqës Komuniteti</p>
+                        <div class="credentials">
+                            <span class="credential">Doktor në Shkenca Politike</span>
+                            <span class="credential">Imam në Xhaminë e Seebach</span>
+                            <span class="credential">Nënkryetar i KMShZ</span>
+                            <span class="credential">Kryesi Qendror i FIDS</span>
+                        </div>
+                        </br>
+                        <p>Dijetar i shquar islam shqiptar dhe imam që shërben komunitetin mysliman në Zvicër. Dr. Aliu kombinon njohuritë e thella teologjike me ekspertizën sociologjike për të adresuar sfidat me të cilat përballen myslimanët në shoqëritë evropiane, duke mbështetur aktivisht diasporën shqiptare përmes udhëheqjes fetare dhe angazhimit të komunitetit.</p>
+                    </div>
+
+                    <div class="lang-content" data-lang="de">
+                        <h1 class="serif">Dr. Bashkim Aliu</h1>
+                        <p class="subtitle">Albanischer Islamischer Gelehrter, Imam & Gemeindeleiter</p>
+                        <div class="credentials">
+                            <span class="credential">PhD in Politikwissenschaft</span>
+                            <span class="credential">Imam der Seebach Moschee</span>
+                            <span class="credential">KMShZ Vizepräsident</span>
+                            <span class="credential">FIDS Zentralpräsidium</span>
+                        </div>
+                        </br>
+                        <p>Angesehener albanischer islamischer Gelehrter und Imam, der der muslimischen Gemeinschaft in der Schweiz dient. Dr. Aliu verbindet tiefes theologisches Wissen mit soziologischer Expertise, um die Herausforderungen anzugehen, denen Muslime in europäischen Gesellschaften gegenüberstehen, während er aktiv die albanische Diaspora durch religiöse Führung und Gemeinschaftsengagement unterstützt.</p>
+                    </div>
+
+                    <div class="cta-buttons">
+                        <a href="books.html" class="btn">
+                            <span>📚</span>
+                            <span class="lang-content active" data-lang="en">View Books</span>
+                            <span class="lang-content" data-lang="sq">Shiko Librat</span>
+                            <span class="lang-content" data-lang="de">Bücher Ansehen</span>
+                        </a>
+                        <a href="gallery.html" class="btn btn-secondary">
+                            <span>🖼️</span>
+                            <span class="lang-content active" data-lang="en">Gallery</span>
+                            <span class="lang-content" data-lang="sq">Galeria</span>
+                            <span class="lang-content" data-lang="de">Galerie</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Statistics Section -->
+            <section class="stats">
+                <div class="lang-content active" data-lang="en">
+                    <h2 class="serif" style="color: white;">Academic & Community Impact</h2>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <span class="stat-number">20+</span>
+                            <span class="stat-label">Books Authored</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">50+</span>
+                            <span class="stat-label">Translations</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">2015</span>
+                            <span class="stat-label">PhD Completed</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">3+</span>
+                            <span class="stat-label">Major Organizations</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lang-content" data-lang="sq">
+                    <h2 class="serif" style="color: white;">Ndikimi Akademik dhe Komuniteti</h2>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <span class="stat-number">20+</span>
+                            <span class="stat-label">Libra të Shkruar</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">50+</span>
+                            <span class="stat-label">Përkthime</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">2015</span>
+                            <span class="stat-label">Doktoratura e Përfunduar</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">3+</span>
+                            <span class="stat-label">Organizata Kryesore</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lang-content" data-lang="de">
+                    <h2 class="serif" style="color: white;">Akademische & Gemeinschaftliche Wirkung</h2>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <span class="stat-number">20+</span>
+                            <span class="stat-label">Verfasste Bücher</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">50+</span>
+                            <span class="stat-label">Übersetzungen</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">2015</span>
+                            <span class="stat-label">PhD Abgeschlossen</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">3+</span>
+                            <span class="stat-label">Hauptorganisationen</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Biography Section -->
+            <section id="biography">
+                <div class="lang-content active" data-lang="en">
+                    <h2 class="serif">Biography & Academic Journey</h2>
+                    <div class="grid grid-2">
+                        <div class="card">
+                            <h3><span class="card-icon">🎓</span>Academic Excellence</h3>
+                            <p>Dr. Bashkim Aliu earned his Ph.D. in Political Science from the prestigious Institute of Sociology in Skopje. His doctoral thesis, titled "The Political Integration of Muslims in the EU – Britain, France, and Germany as Examples," was successfully defended in 2015 and celebrated as a major accomplishment within the Albanian Islamic scholarly community.</p>
+                        </div>
+                        <div class="card">
+                            <h3><span class="card-icon">🕌</span>Religious Leadership</h3>
+                            <p>Currently serving as Imam at Seebach Mosque in Switzerland, Dr. Aliu provides spiritual guidance and leads religious services for the local Muslim community. His approach combines traditional Islamic teachings with contemporary understanding of Muslim life in European contexts.</p>
+                        </div>
+                        <div class="card">
+                            <h3><span class="card-icon">🏛️</span>Organizational Leadership</h3>
+                            <p>Dr. Aliu holds significant positions in major Swiss Islamic organizations, serving as Vice President of the Coordination Council of Islamic Organizations in Switzerland (KMShZ) and as a Central Presidency Member of the Federation of Islamic Organizations in Switzerland (FIDS).</p>
+                        </div>
+                        <div class="card">
+                            <h3><span class="card-icon">🌍</span>Diaspora Advocacy</h3>
+                            <p>Actively engaged in supporting the Albanian Muslim diaspora in Switzerland and Kosovo, Dr. Aliu works to strengthen cultural and religious ties while promoting successful integration into Swiss society. His work bridges traditional Albanian Islamic heritage with contemporary European Muslim identity.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lang-content" data-lang="sq">
+                    <h2 class="serif">Biografia dhe Udhëtimi Akademik</h2>
+                    <div class="grid grid-2">
+                        <div class="card">
+                            <h3><span class="card-icon">🎓</span>Përsosmëria Akademike</h3>
+                            <p>Dr. Bashkim Aliu fitoi doktoraturën në Shkenca Politike nga Instituti prestigjioz i Sociologjisë në Shkup. Teza e tij doktorale, me titull "Integrimi Politik i Myslimanëve në BE – Britania, Franca dhe Gjermania si Shembuj," u mbrojt me sukses në 2015 dhe u festua si një arritje e madhe brenda komunitetit dijetar islam shqiptar.</p>
+                        </div>
+                        <div class="card">
+                            <h3><span class="card-icon">🕌</span>Udhëheqja Fetare</h3>
+                            <p>Aktualisht shërben si Imam në Xhaminë e Seebach në Zvicër, Dr. Aliu ofron udhëzime shpirtërore dhe udhëheq shërbimet fetare për komunitetin mysliman lokal. Qasja e tij kombinon mësimet tradicionale islame me kuptimin bashkëkohor të jetës myslimane në kontekste evropiane.</p>
+                        </div>
+                        <div class="card">
+                            <h3><span class="card-icon">🏛️</span>Udhëheqja Organizative</h3>
+                            <p>Dr. Aliu mban pozicione të rëndësishme në organizatat kryesore islame zvicerane, duke shërbyer si Nënkryetar i Këshillit të Koordinimit të Organizatave Islame në Zvicër (KMShZ) dhe si Anëtar i Kryesisë Qendrore të Federatës së Organizatave Islame në Zvicër (FIDS).</p>
+                        </div>
+                        <div class="card">
+                            <h3><span class="card-icon">🌍</span>Avokatia e Diasporës</h3>
+                            <p>Aktivisht i angazhuar në mbështetjen e diasporës myslimane shqiptare në Zvicër dhe Kosovë, Dr. Aliu punon për të forcuar lidhjet kulturore dhe fetare duke promovuar integrimin e suksesshëm në shoqërinë zvicerane. Puna e tij lidh trashëgiminë tradicionale islame shqiptare me identitetin bashkëkohor mysliman evropian.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lang-content" data-lang="de">
+                    <h2 class="serif">Biografie & Akademische Reise</h2>
+                    <div class="grid grid-2">
+                        <div class="card">
+                            <h3><span class="card-icon">🎓</span>Akademische Exzellenz</h3>
+                            <p>Dr. Bashkim Aliu erwarb seinen Ph.D. in Politikwissenschaft am renommierten Institut für Soziologie in Skopje. Seine Doktorarbeit mit dem Titel "Die politische Integration von Muslimen in der EU – Großbritannien, Frankreich und Deutschland als Beispiele" wurde 2015 erfolgreich verteidigt und als große Errungenschaft in der albanischen islamischen Gelehrtengemeinschaft gefeiert.</p>
+                        </div>
+                        <div class="card">
+                            <h3><span class="card-icon">🕌</span>Religiöse Führung</h3>
+                            <p>Derzeit als Imam der Seebach Moschee in der Schweiz tätig, bietet Dr. Aliu spirituelle Führung und leitet religiöse Dienste für die örtliche muslimische Gemeinschaft. Sein Ansatz verbindet traditionelle islamische Lehren mit zeitgenössischem Verständnis des muslimischen Lebens in europäischen Kontexten.</p>
+                        </div>
+                        <div class="card">
+                            <h3><span class="card-icon">🏛️</span>Organisationsführung</h3>
+                            <p>Dr. Aliu bekleidet bedeutende Positionen in großen schweizerischen islamischen Organisationen und dient als Vizepräsident des Koordinationsrats Islamischer Organisationen in der Schweiz (KMShZ) und als Mitglied des Zentralpräsidiums der Föderation Islamischer Organisationen in der Schweiz (FIDS).</p>
+                        </div>
+                        <div class="card">
+                            <h3><span class="card-icon">🌍</span>Diaspora-Interessenvertretung</h3>
+                            <p>Aktiv engagiert in der Unterstützung der albanischen muslimischen Diaspora in der Schweiz und im Kosovo, arbeitet Dr. Aliu daran, kulturelle und religiöse Bindungen zu stärken und gleichzeitig eine erfolgreiche Integration in die schweizerische Gesellschaft zu fördern. Seine Arbeit verbindet das traditionelle albanische islamische Erbe mit der zeitgenössischen europäischen muslimischen Identität.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Lectures Section -->
+            <section id="lectures">
+                <div class="lang-content active" data-lang="en">
+                    <h2 class="serif">Public Lectures & Speaking Engagements</h2>
+
+                    <div class="grid grid-2">
+                        <div class="card">
+                            <h3><span class="card-icon">💰</span>Islamic Finance & Ethics</h3>
+                            <h4>"Interest and Debt in Western Societies"</h4>
+                            <p>Comprehensive lectures addressing the ethical and religious considerations surrounding interest-bearing financial instruments in Western banking systems. Dr. Aliu provides Islamic perspectives on debt, lending practices, and alternative financial solutions that align with Islamic principles while operating within European economic frameworks.</p>
+                        </div>
+
+                        <div class="card">
+                            <h3><span class="card-icon">🌍</span>Contemporary Islamic Leadership</h3>
+                            <h4>"The Role of Imams in Globalized Societies"</h4>
+                            <p>Explores the evolving responsibilities and challenges facing Islamic religious leaders in an interconnected world. These lectures address how imams can effectively serve their communities while navigating cultural diversity, technological advancement, and the complexities of modern European societies.</p>
+                        </div>
+
+                        <div class="card">
+                            <h3><span class="card-icon">🏛️</span>Integration & Identity</h3>
+                            <h4>"Muslim Identity in European Contexts"</h4>
+                            <p>Addresses the challenges and opportunities of maintaining Islamic identity while successfully integrating into European societies. Dr. Aliu draws from his academic research and practical experience to provide guidance on balancing religious commitment with civic participation.</p>
+                        </div>
+
+                        <div class="card">
+                            <h3><span class="card-icon">📖</span>Religious Education</h3>
+                            <h4>"Contemporary Islamic Jurisprudence for European Muslims"</h4>
+                            <p>Educational lectures focusing on how classical Islamic legal principles apply to modern European contexts. These sessions help Muslim communities understand religious obligations and permissions within the framework of European legal and social systems.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lang-content" data-lang="sq">
+                    <h2 class="serif">Ligjërata Publike dhe Angazhime në Fjalim</h2>
+
+                    <div class="grid grid-2">
+                        <div class="card">
+                            <h3><span class="card-icon">💰</span>Financat dhe Etika Islame</h3>
+                            <h4>"Kamata dhe Borxhi në Shoqëritë Perëndimore"</h4>
+                            <p>Ligjërata gjithëpërfshirëse që adresojnë konsideratat etike dhe fetare rreth instrumenteve financiare me kamatë në sistemet bankare perëndimore. Dr. Aliu ofron perspektiva islame mbi borxhin, praktikat e huadhënies dhe zgjidhjet alternative financiare që përputhen me parimet islame duke operuar brenda kornizave ekonomike evropiane.</p>
+                        </div>
+
+                        <div class="card">
+                            <h3><span class="card-icon">🌍</span>Udhëheqja Bashkëkohore Islame</h3>
+                            <h4>"Roli i Imamëve në Shoqëritë e Globalizuara"</h4>
+                            <p>Eksploron përgjegjësitë dhe sfidat në zhvillim me të cilat përballen udhëheqësit fetarë islamë në një botë të ndërlidhur. Këto ligjërata adresojnë se si imamët mund të shërbejnë efektivisht komunitetet e tyre duke naviguar diversitetin kulturor, avancimin teknologjik dhe kompleksitetet e shoqërive moderne evropiane.</p>
+                        </div>
+
+                        <div class="card">
+                            <h3><span class="card-icon">🏛️</span>Integrimi dhe Identiteti</h3>
+                            <h4>"Identiteti Mysliman në Kontekste Evropiane"</h4>
+                            <p>Adreson sfidat dhe mundësitë e ruajtjes së identitetit islam duke u integruar me sukses në shoqëritë evropiane. Dr. Aliu merr nga kërkimi i tij akademik dhe përvoja praktike për të ofruar udhëzime mbi balancimin e angazhimit fetar me pjesëmarrjen qytetare.</p>
+                        </div>
+
+                        <div class="card">
+                            <h3><span class="card-icon">📖</span>Arsimi Fetar</h3>
+                            <h4>"Jurisprudenca Bashkëkohore Islame për Myslimanët Evropianë"</h4>
+                            <p>Ligjërata arsimore që fokusohen në mënyrën se si parimet klasike ligjore islame aplikohen në kontekste moderne evropiane. Këto sesione ndihmojnë komunitetet myslimane të kuptojnë detyrimet dhe lejet fetare brenda kornizës së sistemeve ligjore dhe sociale evropiane.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lang-content" data-lang="de">
+                    <h2 class="serif">Öffentliche Vorträge & Rednerauftritte</h2>
+
+                    <div class="grid grid-2">
+                        <div class="card">
+                            <h3><span class="card-icon">💰</span>Islamische Finanzen & Ethik</h3>
+                            <h4>"Zinsen und Schulden in westlichen Gesellschaften"</h4>
+                            <p>Umfassende Vorträge zu ethischen und religiösen Überlegungen bezüglich zinsbringender Finanzinstrumente in westlichen Bankensystemen. Dr. Aliu bietet islamische Perspektiven zu Schulden, Kreditvergabepraktiken und alternativen Finanzlösungen, die mit islamischen Prinzipien übereinstimmen und gleichzeitig innerhalb europäischer Wirtschaftsrahmen operieren.</p>
+                        </div>
+
+                        <div class="card">
+                            <h3><span class="card-icon">🌍</span>Zeitgenössische Islamische Führung</h3>
+                            <h4>"Die Rolle der Imame in globalisierten Gesellschaften"</h4>
+                            <p>Erforscht die sich entwickelnden Verantwortlichkeiten und Herausforderungen islamischer religiöser Führer in einer vernetzten Welt. Diese Vorträge behandeln, wie Imame ihre Gemeinschaften effektiv bedienen können, während sie kulturelle Vielfalt, technologischen Fortschritt und die Komplexitäten moderner europäischer Gesellschaften navigieren.</p>
+                        </div>
+
+                        <div class="card">
+                            <h3><span class="card-icon">🏛️</span>Integration & Identität</h3>
+                            <h4>"Muslimische Identität in europäischen Kontexten"</h4>
+                            <p>Behandelt die Herausforderungen und Chancen der Bewahrung islamischer Identität bei erfolgreicher Integration in europäische Gesellschaften. Dr. Aliu schöpft aus seiner akademischen Forschung und praktischen Erfahrung, um Anleitung zum Ausgleich religiöser Verpflichtung mit bürgerlicher Teilhabe zu bieten.</p>
+                        </div>
+
+                        <div class="card">
+                            <h3><span class="card-icon">📖</span>Religiöse Bildung</h3>
+                            <h4>"Zeitgenössische Islamische Rechtsprechung für Europäische Muslime"</h4>
+                            <p>Bildungsvorträge, die sich darauf konzentrieren, wie klassische islamische Rechtsprinzipien auf moderne europäische Kontexte angewendet werden. Diese Sitzungen helfen muslimischen Gemeinschaften, religiöse Verpflichtungen und Erlaubnisse innerhalb des Rahmens europäischer Rechts- und Sozialsysteme zu verstehen.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact">
+                <div class="lang-content active" data-lang="en">
+                    <h2 class="serif">Contact Information</h2>
+                    <div class="grid grid-2">
+                        <div class="card">
+                            <h3><span class="card-icon">🕌</span>Seebach Mosque</h3>
+                            <p><strong>Position:</strong> Imam & Religious Leader</p>
+                            <p><strong>Location:</strong> Seebach, Switzerland</p>
+                            <p>For religious guidance, community services, and spiritual counseling.</p>
+                        </div>
+
+                        <div class="card">
+                            <h3><span class="card-icon">🏛️</span>Organizational Roles</h3>
+                            <p><strong>KMShZ:</strong> Vice President</p>
+                            <p><strong>FIDS:</strong> Central Presidency Member</p>
+                            <p>For institutional matters and community coordination.</p>
+                        </div>
+
+                        <div class="card">
+                            <h3><span class="card-icon">📧</span>Academic Inquiries</h3>
+                            <p><strong>Email:</strong> dr.bashkim.aliu@example.com</p>
+                            <p>For academic collaboration, research inquiries, and speaking engagements.</p>
+                        </div>
+
+                        <div class="card">
+                            <h3><span class="card-icon">📱</span>Social Media</h3>
+                            <p><strong>Facebook:</strong> Regular updates and community announcements</p>
+                            <p><strong>YouTube:</strong> Lectures and educational content</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lang-content" data-lang="sq">
+                    <h2 class="serif">Informacionet e Kontaktit</h2>
+                    <div class="grid grid-2">
+                        <div class="card">
+                            <h3><span class="card-icon">🕌</span>Xhamia e Seebach</h3>
+                            <p><strong>Pozicioni:</strong> Imam dhe Udhëheqës Fetar</p>
+                            <p><strong>Vendndodhja:</strong> Seebach, Zvicër</p>
+                            <p>Për udhëzime fetare, shërbime komuniteti dhe këshillime shpirtërore.</p>
+                        </div>
+
+                        <div class="card">
+                            <h3><span class="card-icon">🏛️</span>Rolet Organizative</h3>
+                            <p><strong>KMShZ:</strong> Nënkryetar</p>
+                            <p><strong>FIDS:</strong> Anëtar i Kryesisë Qendrore</p>
+                            <p>Për çështje institucionale dhe koordinim komuniteti.</p>
+                        </div>
+
+                        <div class="card">
+                            <h3><span class="card-icon">📧</span>Pyetje Akademike</h3>
+                            <p><strong>Email:</strong> dr.bashkim.aliu@example.com</p>
+                            <p>Për bashkëpunim akademik, pyetje kërkimore dhe angazhime në fjalim.</p>
+                        </div>
+
+                        <div class="card">
+                            <h3><span class="card-icon">📱</span>Mediat Sociale</h3>
+                            <p><strong>Facebook:</strong> Përditësime të rregullta dhe njoftimet e komunitetit</p>
+                            <p><strong>YouTube:</strong> Ligjërata dhe përmbajtje arsimore</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lang-content" data-lang="de">
+                    <h2 class="serif">Kontaktinformationen</h2>
+                    <div class="grid grid-2">
+                        <div class="card">
+                            <h3><span class="card-icon">🕌</span>Seebach Moschee</h3>
+                            <p><strong>Position:</strong> Imam & Religiöser Leiter</p>
+                            <p><strong>Standort:</strong> Seebach, Schweiz</p>
+                            <p>Für religiöse Führung, Gemeindedienste und spirituelle Beratung.</p>
+                        </div>
+
+                        <div class="card">
+                            <h3><span class="card-icon">🏛️</span>Organisationsrollen</h3>
+                            <p><strong>KMShZ:</strong> Vizepräsident</p>
+                            <p><strong>FIDS:</strong> Mitglied des Zentralpräsidiums</p>
+                            <p>Für institutionelle Angelegenheiten und Gemeindekoordination.</p>
+                        </div>
+
+                        <div class="card">
+                            <h3><span class="card-icon">📧</span>Akademische Anfragen</h3>
+                            <p><strong>E-Mail:</strong> dr.bashkim.aliu@example.com</p>
+                            <p>Für akademische Zusammenarbeit, Forschungsanfragen und Redneraufträge.</p>
+                        </div>
+
+                        <div class="card">
+                            <h3><span class="card-icon">📱</span>Soziale Medien</h3>
+                            <p><strong>Facebook:</strong> Regelmäßige Updates und Gemeindeankündigungen</p>
+                            <p><strong>YouTube:</strong> Vorträge und Bildungsinhalte</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="lang-content active" data-lang="en">
+                        <h4>Dr. Bashkim Aliu</h4>
+                        <p>Albanian Islamic Scholar, Imam, and community leader dedicated to serving Muslim communities in Switzerland while preserving Albanian Islamic heritage and promoting successful integration into European society.</p>
+                    </div>
+                    <div class="lang-content" data-lang="sq">
+                        <h4>Dr. Bashkim Aliu</h4>
+                        <p>Dijetar Islam Shqiptar, Imam dhe udhëheqës komuniteti i përkushtuar për të shërbyer komunitetet myslimane në Zvicër duke ruajtur trashëgiminë islame shqiptare dhe promovuar integrimin e suksesshëm në shoqërinë evropiane.</p>
+                    </div>
+                    <div class="lang-content" data-lang="de">
+                        <h4>Dr. Bashkim Aliu</h4>
+                        <p>Albanischer islamischer Gelehrter, Imam und Gemeindeleiter, der sich dem Dienst an muslimischen Gemeinschaften in der Schweiz widmet, während er das albanische islamische Erbe bewahrt und eine erfolgreiche Integration in die europäische Gesellschaft fördert.</p>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <div class="lang-content active" data-lang="en">
+                        <h4>Quick Links</h4>
+                        <p><a href="books.html">Books & Publications</a></p>
+                        <p><a href="gallery.html">Photo Gallery</a></p>
+                        <p><a href="#lectures">Lectures</a></p>
+                        <p><a href="#contact">Contact</a></p>
+                    </div>
+                    <div class="lang-content" data-lang="sq">
+                        <h4>Lidhje të Shpejta</h4>
+                        <p><a href="books.html">Libra dhe Publikime</a></p>
+                        <p><a href="gallery.html">Galeria e Fotove</a></p>
+                        <p><a href="#lectures">Ligjërata</a></p>
+                        <p><a href="#contact">Kontakti</a></p>
+                    </div>
+                    <div class="lang-content" data-lang="de">
+                        <h4>Schnelllinks</h4>
+                        <p><a href="books.html">Bücher & Publikationen</a></p>
+                        <p><a href="gallery.html">Fotogalerie</a></p>
+                        <p><a href="#lectures">Vorträge</a></p>
+                        <p><a href="#contact">Kontakt</a></p>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <div class="lang-content active" data-lang="en">
+                        <h4>Leadership Positions</h4>
+                        <p>Imam - Seebach Mosque</p>
+                        <p>Vice President - KMShZ</p>
+                        <p>Central Presidency - FIDS</p>
+                        <p>Diaspora Community Leader</p>
+                    </div>
+                    <div class="lang-content" data-lang="sq">
+                        <h4>Pozicionet Udhëheqëse</h4>
+                        <p>Imam - Xhamia e Seebach</p>
+                        <p>Nënkryetar - KMShZ</p>
+                        <p>Kryesi Qendror - FIDS</p>
+                        <p>Udhëheqës Komuniteti Diaspora</p>
+                    </div>
+                    <div class="lang-content" data-lang="de">
+                        <h4>Führungspositionen</h4>
+                        <p>Imam - Seebach Moschee</p>
+                        <p>Vizepräsident - KMShZ</p>
+                        <p>Zentralpräsidium - FIDS</p>
+                        <p>Diaspora-Gemeindeleiter</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="lang-content active" data-lang="en">
+                    <p>&copy; 2024 Dr. Bashkim Aliu. All rights reserved. | Dedicated to Islamic scholarship, community service, and diaspora support.</p>
+                </div>
+                <div class="lang-content" data-lang="sq">
+                    <p>&copy; 2024 Dr. Bashkim Aliu. Të gjitha të drejtat e rezervuara. | I përkushtuar për studimet islame, shërbimin e komunitetit dhe mbështetjen e diasporës.</p>
+                </div>
+                <div class="lang-content" data-lang="de">
+                    <p>&copy; 2024 Dr. Bashkim Aliu. Alle Rechte vorbehalten. | Der islamischen Gelehrsamkeit, dem Gemeindedienst und der Diaspora-Unterstützung gewidmet.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        let currentLang = 'en';
+
+        function switchLanguage(lang) {
+            // Hide all content with current language
+            const currentContent = document.querySelectorAll(`.lang-content[data-lang="${currentLang}"]`);
+            currentContent.forEach(element => {
+                element.classList.remove('active');
+            });
+
+            // Show all content with new language
+            const newContent = document.querySelectorAll(`.lang-content[data-lang="${lang}"]`);
+            newContent.forEach(element => {
+                element.classList.add('active');
+            });
+
+            // Update language buttons
+            const langButtons = document.querySelectorAll('.lang-btn');
+            langButtons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            // Update current language
+            currentLang = lang;
+
+            // Update document language attribute
+            document.documentElement.lang = lang;
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to header
+        window.addEventListener('scroll', function () {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.boxShadow = 'var(--shadow-lg)';
+            } else {
+                header.style.boxShadow = 'var(--shadow-sm)';
+            }
+        });
+
+        // Add loading animation
+        window.addEventListener('load', function () {
+            document.body.style.opacity = '0';
+            document.body.style.transition = 'opacity 0.5s ease';
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+
+        // Add intersection observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all cards and sections
+        document.querySelectorAll('.card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+
+<script>
+function toggleMenu() {
+    const navMenu = document.querySelector('.nav-menu');
+    navMenu.classList.toggle('open');
+}
+</script>
+
+</body>
+</html>
