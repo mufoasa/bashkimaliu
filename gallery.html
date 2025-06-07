@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Dr. Bashkim Aliu</title>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1a365d;
+            --secondary-color: #2d5a87;
+            --accent-color: #c49b61;
+            --text-primary: #2d3748;
+            --text-secondary: #4a5568;
+            --text-light: #718096;
+            --background-light: #f7fafc;
+            --background-white: #ffffff;
+            --border-color: #e2e8f0;
+            --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--background-light);
+        }
+
+        .serif {
+            font-family: 'Crimson Text', Georgia, serif;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: var(--background-white);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: var(--shadow-sm);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+            .logo .title {
+                font-size: 0.875rem;
+                font-weight: 400;
+                color: var(--text-secondary);
+                display: block;
+                margin-top: -2px;
+            }
+
+        .language-switcher {
+            display: flex;
+            gap: 4px;
+            background: var(--background-light);
+            padding: 4px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .lang-btn {
+            padding: 6px 12px;
+            border: none;
+            background: transparent;
+            color: var(--text-secondary);
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 0.875rem;
+            transition: all 0.2s ease;
+        }
+
+            .lang-btn.active,
+            .lang-btn:hover {
+                background: var(--background-white);
+                color: var(--primary-color);
+                box-shadow: var(--shadow-sm);
+            }
+
+        /* Navigation */
+        nav {
+            background: var(--primary-color);
+            border-top: 1px solid var(--secondary-color);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 0;
+        }
+
+            .nav-menu li {
+                margin: 0;
+            }
+
+            .nav-menu a {
+                color: rgba(255, 255, 255, 0.9);
+                text-decoration: none;
+                font-weight: 500;
+                font-size: 0.875rem;
+                padding: 1rem 1.5rem;
+                display: block;
+                transition: all 0.2s ease;
+                border-bottom: 3px solid transparent;
+            }
+
+                .nav-menu a:hover,
+                .nav-menu a.active {
+                    color: white;
+                    background: rgba(255, 255, 255, 0.1);
+                    border-bottom-color: var(--accent-color);
+                }
+
+        /* Main Content */
+        main {
+            margin-top: 120px;
+            background: var(--background-white);
+            min-height: calc(100vh - 120px);
+        }
+
+        .page-header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+            .page-header h1 {
+                color: white;
+                font-size: 3rem;
+                margin-bottom: 1rem;
+            }
+
+            .page-header p {
+                font-size: 1.25rem;
+                color: rgba(255, 255, 255, 0.9);
+                max-width: 600px;
+                margin: 0 auto;
+            }
+
+        section {
+            padding: 5rem 0;
+        }
+
+        h1, h2, h3, h4 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+            letter-spacing: -0.025em;
+        }
+
+            h2::after {
+                content: '';
+                position: absolute;
+                bottom: -15px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 60px;
+                height: 2px;
+                background: var(--accent-color);
+            }
+
+        p {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        /* Language Content */
+        .lang-content {
+            display: none;
+        }
+
+            .lang-content.active {
+                display: block;
+            }
+
+        /* Gallery Grid */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+            background: var(--background-white);
+        }
+
+            .gallery-item:hover {
+                transform: translateY(-4px);
+                box-shadow: var(--shadow-lg);
+            }
+
+        .gallery-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-image {
+            transform: scale(1.05);
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            color: white;
+            padding: 2rem 1rem 1rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        /* Category Filters */
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: var(--background-light);
+            color: var(--text-secondary);
+            padding: 0.75rem 1.5rem;
+            border: 2px solid var(--border-color);
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+
+            .filter-btn:hover,
+            .filter-btn.active {
+                background: var(--primary-color);
+                color: white;
+                border-color: var(--primary-color);
+            }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        .modal-content {
+            position: relative;
+            margin: auto;
+            padding: 20px;
+            width: 90%;
+            max-width: 800px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .modal-image {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+            .close:hover {
+                color: var(--accent-color);
+            }
+
+        /* Footer */
+        footer {
+            background: var(--primary-color);
+            color: white;
+            padding: 3rem 0 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            line-height: 1.6;
+        }
+
+            .footer-section a:hover {
+                color: white;
+            }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: 2rem;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 0.75rem 0;
+            }
+
+            .nav-menu {
+                flex-direction: column;
+                align-items: center;
+            }
+
+                .nav-menu a {
+                    padding: 0.75rem 1rem;
+                }
+
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .filter-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            main {
+                margin-top: 160px;
+            }
+
+            section {
+                padding: 3rem 0;
+            }
+        }
+    
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+    }
+
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-menu.open {
+        display: flex;
+    }
+}
+
+</style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+    <button class="menu-toggle" onclick="toggleMenu()">&#9776;</button>
+                <a href="index.html" class="logo">
+                    Dr. Bashkim Aliu
+                    <span class="title">Albanian Islamic Scholar & Imam</span>
+                </a>
+                <div class="language-switcher">
+                    <button class="lang-btn active" onclick="switchLanguage('en')">EN</button>
+                    <button class="lang-btn" onclick="switchLanguage('sq')">SQ</button>
+                    <button class="lang-btn" onclick="switchLanguage('de')">DE</button>
+                </div>
+            </div>
+        </div>
+        <nav>
+            <div class="container">
+                <ul class="nav-menu">
+                    <li>
+                        <a href="index.html">
+                            <span class="lang-content active" data-lang="en">Home</span>
+                            <span class="lang-content" data-lang="sq">Kreu</span>
+                            <span class="lang-content" data-lang="de">Startseite</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="index.html#biography">
+                            <span class="lang-content active" data-lang="en">Biography</span>
+                            <span class="lang-content" data-lang="sq">Biografia</span>
+                            <span class="lang-content" data-lang="de">Biografie</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="books.html">
+                            <span class="lang-content active" data-lang="en">Books</span>
+                            <span class="lang-content" data-lang="sq">Libra</span>
+                            <span class="lang-content" data-lang="de">Bücher</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="index.html#lectures">
+                            <span class="lang-content active" data-lang="en">Lectures</span>
+                            <span class="lang-content" data-lang="sq">Ligjërata</span>
+                            <span class="lang-content" data-lang="de">Vorträge</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="gallery.html" class="active">
+                            <span class="lang-content active" data-lang="en">Gallery</span>
+                            <span class="lang-content" data-lang="sq">Galeria</span>
+                            <span class="lang-content" data-lang="de">Galerie</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="index.html#contact">
+                            <span class="lang-content active" data-lang="en">Contact</span>
+                            <span class="lang-content" data-lang="sq">Kontakti</span>
+                            <span class="lang-content" data-lang="de">Kontakt</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <div class="lang-content active" data-lang="en">
+                    <h1 class="serif">Photo Gallery</h1>
+                    <p>A visual journey through Dr. Bashkim Aliu's academic career, community leadership, and contributions to Islamic scholarship and diaspora support.</p>
+                </div>
+                <div class="lang-content" data-lang="sq">
+                    <h1 class="serif">Galeria e Fotove</h1>
+                    <p>Një udhëtim vizual përmes karrierës akademike të Dr. Bashkim Aliu, udhëheqjes së komunitetit dhe kontributeve në studimet islame dhe mbështetjen e diasporës.</p>
+                </div>
+                <div class="lang-content" data-lang="de">
+                    <h1 class="serif">Fotogalerie</h1>
+                    <p>Eine visuelle Reise durch Dr. Bashkim Alius akademische Laufbahn, Gemeindeleitung und Beiträge zur islamischen Gelehrsamkeit und Diaspora-Unterstützung.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section>
+            <div class="container">
+                <div class="lang-content active" data-lang="en">
+                    <h2 class="serif">Community & Academic Life</h2>
+
+                    <div class="filter-buttons">
+                        <button class="filter-btn active" onclick="filterGallery('all')">All Photos</button>
+                        <button class="filter-btn" onclick="filterGallery('lectures')">Lectures</button>
+                        <button class="filter-btn" onclick="filterGallery('community')">Community Events</button>
+                        <button class="filter-btn" onclick="filterGallery('academic')">Academic Work</button>
+                        <button class="filter-btn" onclick="filterGallery('books')">Book Events</button>
+                    </div>
+                </div>
+
+                <div class="lang-content" data-lang="sq">
+                    <h2 class="serif">Jeta Komunitare dhe Akademike</h2>
+
+                    <div class="filter-buttons">
+                        <button class="filter-btn active" onclick="filterGallery('all')">Të Gjitha Fotot</button>
+                        <button class="filter-btn" onclick="filterGallery('lectures')">Ligjërata</button>
+                        <button class="filter-btn" onclick="filterGallery('community')">Ngjarje Komuniteti</button>
+                        <button class="filter-btn" onclick="filterGallery('academic')">Puna Akademike</button>
+                        <button class="filter-btn" onclick="filterGallery('books')">Ngjarje Librash</button>
+                    </div>
+                </div>
+
+                <div class="lang-content" data-lang="de">
+                    <h2 class="serif">Gemeinde- & Akademisches Leben</h2>
+
+                    <div class="filter-buttons">
+                        <button class="filter-btn active" onclick="filterGallery('all')">Alle Fotos</button>
+                        <button class="filter-btn" onclick="filterGallery('lectures')">Vorträge</button>
+                        <button class="filter-btn" onclick="filterGallery('community')">Gemeindeveranstaltungen</button>
+                        <button class="filter-btn" onclick="filterGallery('academic')">Akademische Arbeit</button>
+                        <button class="filter-btn" onclick="filterGallery('books')">Buchveranstaltungen</button>
+                    </div>
+                </div>
+
+                <div class="gallery-grid">
+                    <div class="gallery-item" data-category="lectures" onclick="openModal('https://i.imgur.com/Z1ngHJQ.jpeg')">
+                        <img src="https://i.imgur.com/Z1ngHJQ.jpeg" alt="Lecture photo" class="gallery-image">
+                        <div class="gallery-caption">
+                            <span class="lang-content active" data-lang="en">Lecture event</span>
+                            <span class="lang-content" data-lang="sq">Ngjarje leksionesh</span>
+                            <span class="lang-content" data-lang="de">Vortragsveranstaltung</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="community" onclick="openModal('https://i.imgur.com/54QMkeC.jpeg')">
+                        <img src="https://i.imgur.com/54QMkeC.jpeg" alt="Community event" class="gallery-image">
+                        <div class="gallery-caption">
+                            <span class="lang-content active" data-lang="en">Community gathering</span>
+                            <span class="lang-content" data-lang="sq">Tubim komuniteti</span>
+                            <span class="lang-content" data-lang="de">Gemeinschaftstreffen</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="academic" onclick="openModal('https://i.imgur.com/uqd1RmU.jpeg')">
+                        <img src="https://i.imgur.com/uqd1RmU.jpeg" alt="Academic event" class="gallery-image">
+                        <div class="gallery-caption">
+                            <span class="lang-content active" data-lang="en">Academic discussion</span>
+                            <span class="lang-content" data-lang="sq">Diskutim akademik</span>
+                            <span class="lang-content" data-lang="de">Akademische Diskussion</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="books" onclick="openModal('https://i.imgur.com/A2xuBHJ.jpeg')">
+                        <img src="https://i.imgur.com/A2xuBHJ.jpeg" alt="Book discussion" class="gallery-image">
+                        <div class="gallery-caption">
+                            <span class="lang-content active" data-lang="en">Book discussion</span>
+                            <span class="lang-content" data-lang="sq">Diskutim libri</span>
+                            <span class="lang-content" data-lang="de">Buchdiskussion</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="community" onclick="openModal('https://i.imgur.com/vSsaAd8.jpeg')">
+                        <img src="https://i.imgur.com/vSsaAd8.jpeg" alt="Cultural night" class="gallery-image">
+                        <div class="gallery-caption">
+                            <span class="lang-content active" data-lang="en">Cultural night</span>
+                            <span class="lang-content" data-lang="sq">Natë kulturore</span>
+                            <span class="lang-content" data-lang="de">Kulturelle Nacht</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="lectures" onclick="openModal('https://i.imgur.com/uX3KqGC.jpeg')">
+                        <img src="https://i.imgur.com/uX3KqGC.jpeg" alt="Lecture event" class="gallery-image">
+                        <div class="gallery-caption">
+                            <span class="lang-content active" data-lang="en">Lecture event</span>
+                            <span class="lang-content" data-lang="sq">Ngjarje leksionesh</span>
+                            <span class="lang-content" data-lang="de">Vortragsveranstaltung</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="academic" onclick="openModal('https://i.imgur.com/TleymbV.jpeg')">
+                        <img src="https://i.imgur.com/TleymbV.jpeg" alt="Academic seminar" class="gallery-image">
+                        <div class="gallery-caption">
+                            <span class="lang-content active" data-lang="en">Academic seminar</span>
+                            <span class="lang-content" data-lang="sq">Seminar akademik</span>
+                            <span class="lang-content" data-lang="de">Akademisches Seminar</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="community" onclick="openModal('https://i.imgur.com/uPRz7co.jpeg')">
+                        <img src="https://i.imgur.com/uPRz7co.jpeg" alt="Public gathering" class="gallery-image">
+                        <div class="gallery-caption">
+                            <span class="lang-content active" data-lang="en">Public gathering</span>
+                            <span class="lang-content" data-lang="sq">Mbledhje publike</span>
+                            <span class="lang-content" data-lang="de">Öffentliche Versammlung</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="community" onclick="openModal('https://i.imgur.com/SicqYve.jpeg')">
+                        <img src="https://i.imgur.com/SicqYve.jpeg" alt="Civic event" class="gallery-image">
+                        <div class="gallery-caption">
+                            <span class="lang-content active" data-lang="en">Civic event</span>
+                            <span class="lang-content" data-lang="sq">Ngjarje qytetare</span>
+                            <span class="lang-content" data-lang="de">Bürgerversammlung</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="lectures" onclick="openModal('https://i.imgur.com/pMjaqck.jpeg')">
+                        <img src="https://i.imgur.com/pMjaqck.jpeg" alt="Panel discussion" class="gallery-image">
+                        <div class="gallery-caption">
+                            <span class="lang-content active" data-lang="en">Panel discussion</span>
+                            <span class="lang-content" data-lang="sq">Diskutim paneli</span>
+                            <span class="lang-content" data-lang="de">Podiumsdiskussion</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="community" onclick="openModal('https://i.imgur.com/7Or12iv.jpeg')">
+                        <img src="https://i.imgur.com/7Or12iv.jpeg" alt="Outdoor event" class="gallery-image">
+                        <div class="gallery-caption">
+                            <span class="lang-content active" data-lang="en">Outdoor event</span>
+                            <span class="lang-content" data-lang="sq">Ngjarje në natyrë</span>
+                            <span class="lang-content" data-lang="de">Veranstaltung im Freien</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="academic" onclick="openModal('https://i.imgur.com/H5Tyy9i.jpeg')">
+                        <img src="https://i.imgur.com/H5Tyy9i.jpeg" alt="Educational session" class="gallery-image">
+                        <div class="gallery-caption">
+                            <span class="lang-content active" data-lang="en">Educational session</span>
+                            <span class="lang-content" data-lang="sq">Sesion edukativ</span>
+                            <span class="lang-content" data-lang="de">Bildungssitzung</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="community" onclick="openModal('https://i.imgur.com/AQXtdTI.jpeg')">
+                        <img src="https://i.imgur.com/AQXtdTI.jpeg" alt="Community talk" class="gallery-image">
+                        <div class="gallery-caption">
+                            <span class="lang-content active" data-lang="en">Community talk</span>
+                            <span class="lang-content" data-lang="sq">Bisedë komunitare</span>
+                            <span class="lang-content" data-lang="de">Gemeinschaftsgespräch</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="lectures" onclick="openModal('https://i.imgur.com/vhV7SfX.jpeg')">
+                        <img src="https://i.imgur.com/vhV7SfX.jpeg" alt="Speaker session" class="gallery-image">
+                        <div class="gallery-caption">
+                            <span class="lang-content active" data-lang="en">Speaker session</span>
+                            <span class="lang-content" data-lang="sq">Sesion folës</span>
+                            <span class="lang-content" data-lang="de">Rednerveranstaltung</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="books" onclick="openModal('https://i.imgur.com/uc49k9j.jpeg')">
+                        <img src="https://i.imgur.com/uc49k9j.jpeg" alt="Library meet" class="gallery-image">
+                        <div class="gallery-caption">
+                            <span class="lang-content active" data-lang="en">Library meet</span>
+                            <span class="lang-content" data-lang="sq">Takim në bibliotekë</span>
+                            <span class="lang-content" data-lang="de">Bibliothekstreffen</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="community" onclick="openModal('https://i.imgur.com/BJO6RSY.jpeg')">
+                        <img src="https://i.imgur.com/BJO6RSY.jpeg" alt="Neighborhood event" class="gallery-image">
+                        <div class="gallery-caption">
+                            <span class="lang-content active" data-lang="en">Neighborhood event</span>
+                            <span class="lang-content" data-lang="sq">Ngjarje në lagje</span>
+                            <span class="lang-content" data-lang="de">Nachbarschaftsveranstaltung</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="academic" onclick="openModal('https://i.imgur.com/0MbxiEj.jpeg')">
+                        <img src="https://i.imgur.com/0MbxiEj.jpeg" alt="Scholarly talk" class="gallery-image">
+                        <div class="gallery-caption">
+                            <span class="lang-content active" data-lang="en">Scholarly talk</span>
+                            <span class="lang-content" data-lang="sq">Ligjëratë shkencore</span>
+                            <span class="lang-content" data-lang="de">Wissenschaftlicher Vortrag</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="books" onclick="openModal('https://i.imgur.com/zK5dSmg.jpeg')">
+                        <img src="https://i.imgur.com/zK5dSmg.jpeg" alt="Reading circle" class="gallery-image">
+                        <div class="gallery-caption">
+                            <span class="lang-content active" data-lang="en">Reading circle</span>
+                            <span class="lang-content" data-lang="sq">Rreth leximi</span>
+                            <span class="lang-content" data-lang="de">Lesekreis</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="community" onclick="openModal('https://i.imgur.com/ysMFHo5.jpeg')">
+                        <img src="https://i.imgur.com/ysMFHo5.jpeg" alt="Social event" class="gallery-image">
+                        <div class="gallery-caption">
+                            <span class="lang-content active" data-lang="en">Social event</span>
+                            <span class="lang-content" data-lang="sq">Ngjarje shoqërore</span>
+                            <span class="lang-content" data-lang="de">Soziale Veranstaltung</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="lectures" onclick="openModal('https://imgur.com/JTQhJuT.jpeg')">
+                        <img src="https://imgur.com/JTQhJuT.jpeg" alt="Lecture session" class="gallery-image">
+                        <div class="gallery-caption">
+                            <span class="lang-content active" data-lang="en">Lecture session</span>
+                            <span class="lang-content" data-lang="sq">Sesioni i ligjëratës</span>
+                            <span class="lang-content" data-lang="de">Vortragssitzung</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="community" onclick="openModal('https://i.imgur.com/J9KJGhy.jpeg')">
+                        <img src="https://i.imgur.com/J9KJGhy.jpeg" alt="Cultural gathering" class="gallery-image">
+                        <div class="gallery-caption">
+                            <span class="lang-content active" data-lang="en">Cultural gathering</span>
+                            <span class="lang-content" data-lang="sq">Tubim kulturor</span>
+                            <span class="lang-content" data-lang="de">Kulturelle Versammlung</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="community" onclick="openModal('https://i.imgur.com/CouIFtT.jpeg')">
+                        <img src="https://i.imgur.com/CouIFtT.jpeg" alt="Event photo" class="gallery-image">
+                        <div class="gallery-caption">
+                            <span class="lang-content active" data-lang="en">Public event</span>
+                            <span class="lang-content" data-lang="sq">Ngjarje publike</span>
+                            <span class="lang-content" data-lang="de">Öffentliche Veranstaltung</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="books" onclick="openModal('https://i.imgur.com/Cnmzhkf.jpeg')">
+                        <img src="https://i.imgur.com/Cnmzhkf.jpeg" alt="Book reading" class="gallery-image">
+                        <div class="gallery-caption">
+                            <span class="lang-content active" data-lang="en">Book reading session</span>
+                            <span class="lang-content" data-lang="sq">Sesioni i leximit të librit</span>
+                            <span class="lang-content" data-lang="de">Buchlesung</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="academic" onclick="openModal('https://i.imgur.com/wxxUQhm.jpeg')">
+                        <img src="https://i.imgur.com/wxxUQhm.jpeg" alt="Research presentation" class="gallery-image">
+                        <div class="gallery-caption">
+                            <span class="lang-content active" data-lang="en">Research presentation</span>
+                            <span class="lang-content" data-lang="sq">Prezantim kërkimor</span>
+                            <span class="lang-content" data-lang="de">Forschungsvorstellung</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="community" onclick="openModal('https://i.imgur.com/YgqYWxJ.jpeg')">
+                        <img src="https://i.imgur.com/YgqYWxJ.jpeg" alt="Group event" class="gallery-image">
+                        <div class="gallery-caption">
+                            <span class="lang-content active" data-lang="en">Group gathering</span>
+                            <span class="lang-content" data-lang="sq">Tubim grupor</span>
+                            <span class="lang-content" data-lang="de">Gruppentreffen</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="lectures" onclick="openModal('https://i.imgur.com/Vh3uPuX.jpeg')">
+                        <img src="https://i.imgur.com/Vh3uPuX.jpeg" alt="Lecture panel" class="gallery-image">
+                        <div class="gallery-caption">
+                            <span class="lang-content active" data-lang="en">Lecture panel</span>
+                            <span class="lang-content" data-lang="sq">Panel ligjëratash</span>
+                            <span class="lang-content" data-lang="de">Vortragspanel</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal for image viewing -->
+    <div id="imageModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img id="modalImage" class="modal-image" src="/placeholder.svg" alt="">
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="lang-content active" data-lang="en">
+                        <h4>Dr. Bashkim Aliu</h4>
+                        <p>Albanian Islamic Scholar, Imam, and community leader dedicated to serving Muslim communities in Switzerland while preserving Albanian Islamic heritage.</p>
+                    </div>
+                    <div class="lang-content" data-lang="sq">
+                        <h4>Dr. Bashkim Aliu</h4>
+                        <p>Dijetar Islam Shqiptar, Imam dhe udhëheqës komuniteti i përkushtuar për të shërbyer komunitetet myslimane në Zvicër duke ruajtur trashëgiminë islame shqiptare.</p>
+                    </div>
+                    <div class="lang-content" data-lang="de">
+                        <h4>Dr. Bashkim Aliu</h4>
+                        <p>Albanischer islamischer Gelehrter, Imam und Gemeindeleiter, der sich dem Dienst an muslimischen Gemeinschaften in der Schweiz widmet.</p>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <div class="lang-content active" data-lang="en">
+                        <h4>Quick Links</h4>
+                        <p><a href="index.html">Home</a></p>
+                        <p><a href="books.html">Books & Publications</a></p>
+                        <p><a href="index.html#lectures">Lectures</a></p>
+                        <p><a href="index.html#contact">Contact</a></p>
+                    </div>
+                    <div class="lang-content" data-lang="sq">
+                        <h4>Lidhje të Shpejta</h4>
+                        <p><a href="index.html">Kreu</a></p>
+                        <p><a href="books.html">Libra dhe Publikime</a></p>
+                        <p><a href="index.html#lectures">Ligjërata</a></p>
+                        <p><a href="index.html#contact">Kontakti</a></p>
+                    </div>
+                    <div class="lang-content" data-lang="de">
+                        <h4>Schnelllinks</h4>
+                        <p><a href="index.html">Startseite</a></p>
+                        <p><a href="books.html">Bücher & Publikationen</a></p>
+                        <p><a href="index.html#lectures">Vorträge</a></p>
+                        <p><a href="index.html#contact">Kontakt</a></p>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <div class="lang-content active" data-lang="en">
+                        <h4>Gallery Categories</h4>
+                        <p>Academic Conferences</p>
+                        <p>Community Events</p>
+                        <p>Book Launches</p>
+                        <p>Religious Leadership</p>
+                    </div>
+                    <div class="lang-content" data-lang="sq">
+                        <h4>Kategoritë e Galerisë</h4>
+                        <p>Konferenca Akademike</p>
+                        <p>Ngjarje Komuniteti</p>
+                        <p>Lansimet e Librave</p>
+                        <p>Udhëheqja Fetare</p>
+                    </div>
+                    <div class="lang-content" data-lang="de">
+                        <h4>Galerie-Kategorien</h4>
+                        <p>Akademische Konferenzen</p>
+                        <p>Gemeindeveranstaltungen</p>
+                        <p>Buchvorstellungen</p>
+                        <p>Religiöse Führung</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="lang-content active" data-lang="en">
+                    <p>&copy; 2024 Dr. Bashkim Aliu. All rights reserved. | Dedicated to Islamic scholarship, community service, and diaspora support.</p>
+                </div>
+                <div class="lang-content" data-lang="sq">
+                    <p>&copy; 2024 Dr. Bashkim Aliu. Të gjitha të drejtat e rezervuara. | I përkushtuar për studimet islame, shërbimin e komunitetit dhe mbështetjen e diasporës.</p>
+                </div>
+                <div class="lang-content" data-lang="de">
+                    <p>&copy; 2024 Dr. Bashkim Aliu. Alle Rechte vorbehalten. | Der islamischen Gelehrsamkeit, dem Gemeindedienst und der Diaspora-Unterstützung gewidmet.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        let currentLang = 'en';
+
+        function switchLanguage(lang) {
+            // Hide all content with current language
+            const currentContent = document.querySelectorAll(`.lang-content[data-lang="${currentLang}"]`);
+            currentContent.forEach(element => {
+                element.classList.remove('active');
+            });
+
+            // Show all content with new language
+            const newContent = document.querySelectorAll(`.lang-content[data-lang="${lang}"]`);
+            newContent.forEach(element => {
+                element.classList.add('active');
+            });
+
+            // Update language buttons
+            const langButtons = document.querySelectorAll('.lang-btn');
+            langButtons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            // Update current language
+            currentLang = lang;
+
+            // Update document language attribute
+            document.documentElement.lang = lang;
+        }
+
+        function filterGallery(category) {
+            const items = document.querySelectorAll('.gallery-item');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            // Update active button
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            // Filter items
+            items.forEach(item => {
+                if (category === 'all' || item.dataset.category === category) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        function openModal(imageSrc) {
+            const modal = document.getElementById('imageModal');
+            const modalImage = document.getElementById('modalImage');
+            modal.style.display = 'block';
+            modalImage.src = imageSrc;
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('imageModal');
+            modal.style.display = 'none';
+        }
+
+        // Close modal when clicking outside the image
+        window.onclick = function (event) {
+            const modal = document.getElementById('imageModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+
+        // Add scroll effect to header
+        window.addEventListener('scroll', function () {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.boxShadow = 'var(--shadow-lg)';
+            } else {
+                header.style.boxShadow = 'var(--shadow-sm)';
+            }
+        });
+
+        // Add loading animation
+        window.addEventListener('load', function () {
+            document.body.style.opacity = '0';
+            document.body.style.transition = 'opacity 0.5s ease';
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+
+        // Add intersection observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all gallery items
+        document.querySelectorAll('.gallery-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+
+<script>
+function toggleMenu() {
+    const navMenu = document.querySelector('.nav-menu');
+    navMenu.classList.toggle('open');
+}
+</script>
+
+</body>
+</html>
