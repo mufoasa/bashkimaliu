@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quotes & Wisdom - Dr. Bashkim Aliu</title>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1a365d;
+            --secondary-color: #2d5a87;
+            --accent-color: #c49b61;
+            --text-primary: #2d3748;
+            --text-secondary: #4a5568;
+            --text-light: #718096;
+            --background-light: #f7fafc;
+            --background-white: #ffffff;
+            --border-color: #e2e8f0;
+            --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--background-light);
+        }
+
+        .serif {
+            font-family: 'Crimson Text', Georgia, serif;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: var(--background-white);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: var(--shadow-sm);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .logo .title {
+            font-size: 0.875rem;
+            font-weight: 400;
+            color: var(--text-secondary);
+            display: block;
+            margin-top: -2px;
+        }
+
+        .language-switcher {
+            display: flex;
+            gap: 4px;
+            background: var(--background-light);
+            padding: 4px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .lang-btn {
+            padding: 6px 12px;
+            border: none;
+            background: transparent;
+            color: var(--text-secondary);
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 0.875rem;
+            transition: all 0.2s ease;
+        }
+
+        .lang-btn.active,
+        .lang-btn:hover {
+            background: var(--background-white);
+            color: var(--primary-color);
+            box-shadow: var(--shadow-sm);
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--primary-color);
+            border-top: 1px solid var(--secondary-color);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 0;
+        }
+
+        .nav-menu li {
+            margin: 0;
+        }
+
+        .nav-menu a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.875rem;
+            padding: 1rem 1.5rem;
+            display: block;
+            transition: all 0.2s ease;
+            border-bottom: 3px solid transparent;
+        }
+
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            color: white;
+            background: rgba(255, 255, 255, 0.1);
+            border-bottom-color: var(--accent-color);
+        }
+
+        /* Mobile Menu Toggle */
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .mobile-menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: var(--primary-color);
+            margin: 3px 0;
+            transition: 0.3s;
+            border-radius: 2px;
+        }
+
+        .mobile-menu-toggle.active span:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+
+        .mobile-menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-toggle.active span:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+
+        /* Mobile Navigation */
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: flex;
+            }
+            
+            nav {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--primary-color);
+                transform: translateY(-150%);
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s ease;
+                z-index: 999;
+                box-shadow: var(--shadow-lg);
+            }
+            
+            nav.mobile-open {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+            
+            .nav-menu {
+                flex-direction: column;
+                align-items: stretch;
+                padding: 1rem 0;
+            }
+            
+            .nav-menu a {
+                padding: 1rem 2rem;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                width: 100%;
+                text-align: left;
+            }
+            
+            .nav-menu a:hover {
+                background: rgba(255, 255, 255, 0.1);
+                border-bottom-color: var(--accent-color);
+            }
+        }
+
+        /* Main Content */
+        main {
+            margin-top: 120px;
+            background: var(--background-white);
+            min-height: calc(100vh - 120px);
+        }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="0.5" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .page-header-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .page-header h1 {
+            font-size: 3.5rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+            letter-spacing: -0.025em;
+        }
+
+        .page-header p {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Language Content */
+        .lang-content {
+            display: none;
+        }
+
+        .lang-content.active {
+            display: block;
+        }
+
+        /* Quotes Section */
+        .quotes-section {
+            padding: 5rem 0;
+        }
+
+        .quotes-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 4rem;
+        }
+
+        .quotes-intro h2 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+            color: var(--primary-color);
+            position: relative;
+        }
+
+        .quotes-intro h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 2px;
+            background: var(--accent-color);
+        }
+
+        .quotes-intro p {
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* TikTok Embeds Grid */
+        .tiktok-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .tiktok-embed-wrapper {
+            background: var(--background-white);
+            border-radius: 15px;
+            padding: 1rem;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+            border: 1px solid var(--border-color);
+        }
+
+        .tiktok-embed-wrapper:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* TikTok embed styling */
+        .tiktok-embed {
+            margin: 0 auto;
+            max-width: 100%;
+            min-width: 315px;
+        }
+
+        /* Social Media CTA */
+        .social-cta {
+            background: var(--background-light);
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .social-cta h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .social-cta p {
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .social-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #000;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .social-btn:hover {
+            background: #333;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .social-btn i {
+            font-size: 1.2rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-color);
+            color: white;
+            padding: 3rem 0 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            line-height: 1.6;
+        }
+
+        .footer-section a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: 2rem;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 0.75rem 0;
+            }
+
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .page-header p {
+                font-size: 1.125rem;
+            }
+
+            .quotes-intro h2 {
+                font-size: 2rem;
+            }
+
+            .tiktok-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            main {
+                margin-top: 100px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .tiktok-embed {
+                min-width: 280px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    Dr. Bashkim Aliu
+                    <span class="title">Albanian Islamic Scholar & Imam</span>
+                </a>
+                <div class="language-switcher">
+                    <button class="lang-btn active" onclick="switchLanguage('en')">EN</button>
+                    <button class="lang-btn" onclick="switchLanguage('sq')">SQ</button>
+                    <button class="lang-btn" onclick="switchLanguage('de')">DE</button>
+                </div>
+                <button class="mobile-menu-toggle" onclick="toggleMobileMenu(event)">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+        <nav>
+            <div class="container">
+                <ul class="nav-menu">
+                    <li><a href="index.html">
+                        <span class="lang-content active" data-lang="en">Home</span>
+                        <span class="lang-content" data-lang="sq">Kreu</span>
+                        <span class="lang-content" data-lang="de">Startseite</span>
+                    </a></li>
+                    <li><a href="index.html#biography">
+                        <span class="lang-content active" data-lang="en">Biography</span>
+                        <span class="lang-content" data-lang="sq">Biografia</span>
+                        <span class="lang-content" data-lang="de">Biografie</span>
+                    </a></li>
+                    <li><a href="books.html">
+                        <span class="lang-content active" data-lang="en">Books</span>
+                        <span class="lang-content" data-lang="sq">Libra</span>
+                        <span class="lang-content" data-lang="de">Bücher</span>
+                    </a></li>
+                    <li><a href="index.html#lectures">
+                        <span class="lang-content active" data-lang="en">Lectures</span>
+                        <span class="lang-content" data-lang="sq">Ligjërata</span>
+                        <span class="lang-content" data-lang="de">Vorträge</span>
+                    </a></li>
+                    <li><a href="quotes.html" class="active">
+                        <span class="lang-content active" data-lang="en">Quotes</span>
+                        <span class="lang-content" data-lang="sq">Citate</span>
+                        <span class="lang-content" data-lang="de">Zitate</span>
+                    </a></li>
+                    <li><a href="gallery.html">
+                        <span class="lang-content active" data-lang="en">Gallery</span>
+                        <span class="lang-content" data-lang="sq">Galeria</span>
+                        <span class="lang-content" data-lang="de">Galerie</span>
+                    </a></li>
+                    <li><a href="index.html#contact">
+                        <span class="lang-content active" data-lang="en">Contact</span>
+                        <span class="lang-content" data-lang="sq">Kontakti</span>
+                        <span class="lang-content" data-lang="de">Kontakt</span>
+                    </a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <div class="page-header-content">
+                    <div class="lang-content active" data-lang="en">
+                        <h1 class="serif">Quotes & Wisdom</h1>
+                        <p>Inspirational thoughts and Islamic guidance from Dr. Bashkim Aliu</p>
+                    </div>
+                    <div class="lang-content" data-lang="sq">
+                        <h1 class="serif">Citate dhe Urtësi</h1>
+                        <p>Mendime frymëzuese dhe udhëzime islame nga Dr. Bashkim Aliu</p>
+                    </div>
+                    <div class="lang-content" data-lang="de">
+                        <h1 class="serif">Zitate & Weisheit</h1>
+                        <p>Inspirierende Gedanken und islamische Führung von Dr. Bashkim Aliu</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quotes Section -->
+        <section class="quotes-section">
+            <div class="container">
+                <div class="quotes-intro">
+                    <div class="lang-content active" data-lang="en">
+                        <h2 class="serif">Daily Inspiration</h2>
+                        <p>Dr. Bashkim Aliu regularly shares thoughtful reflections, Islamic teachings, and inspirational messages through his social media platforms. These quotes offer guidance for modern Muslim life and spiritual growth.</p>
+                    </div>
+                    <div class="lang-content" data-lang="sq">
+                        <h2 class="serif">Frymëzim i Përditshëm</h2>
+                        <p>Dr. Bashkim Aliu ndan rregullisht reflektime të menduar, mësime islame dhe mesazhe frymëzuese përmes platformave të tij të mediave sociale. Këto citate ofrojnë udhëzime për jetën moderne myslimane dhe rritjen shpirtërore.</p>
+                    </div>
+                    <div class="lang-content" data-lang="de">
+                        <h2 class="serif">Tägliche Inspiration</h2>
+                        <p>Dr. Bashkim Aliu teilt regelmäßig durchdachte Reflexionen, islamische Lehren und inspirierende Botschaften über seine Social-Media-Plattformen. Diese Zitate bieten Orientierung für das moderne muslimische Leben und spirituelles Wachstum.</p>
+                    </div>
+                </div>
+
+                <!-- TikTok Embeds Grid -->
+                <div class="tiktok-grid">
+                    <div class="tiktok-embed-wrapper">
+                        <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@drbashkimaliu/photo/7518817743857077509" data-video-id="7518817743857077509">
+                            <section></section>
+                        </blockquote>
+                    </div>
+                    
+                    <div class="tiktok-embed-wrapper">
+                        <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@drbashkimaliu/photo/7519679661618515206" data-video-id="7519679661618515206">
+                            <section></section>
+                        </blockquote>
+                    </div>
+                    
+                    <div class="tiktok-embed-wrapper">
+                        <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@drbashkimaliu/photo/7519173898739436856" data-video-id="7519173898739436856">
+                            <section></section>
+                        </blockquote>
+                    </div>
+                    
+                    <div class="tiktok-embed-wrapper">
+                        <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@drbashkimaliu/photo/7518542209059245318" data-video-id="7518542209059245318">
+                            <section></section>
+                        </blockquote>
+                    </div>
+                    
+                    <div class="tiktok-embed-wrapper">
+                        <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@drbashkimaliu/photo/7519268597160594694" data-video-id="7519268597160594694">
+                            <section></section>
+                        </blockquote>
+                    </div>
+                </div>
+
+                <!-- Social Media CTA -->
+                <div class="social-cta">
+                    <div class="lang-content active" data-lang="en">
+                        <h3 class="serif">Follow for More Wisdom</h3>
+                        <p>Stay connected with Dr. Bashkim Aliu's latest thoughts and teachings on TikTok</p>
+                        <a href="https://www.tiktok.com/@drbashkimaliu" target="_blank" class="social-btn">
+                            <i class="fab fa-tiktok"></i>
+                            Follow @drbashkimaliu
+                        </a>
+                    </div>
+                    <div class="lang-content" data-lang="sq">
+                        <h3 class="serif">Ndiqni për Më Shumë Urtësi</h3>
+                        <p>Qëndroni të lidhur me mendimet dhe mësimet e fundit të Dr. Bashkim Aliu në TikTok</p>
+                        <a href="https://www.tiktok.com/@drbashkimaliu" target="_blank" class="social-btn">
+                            <i class="fab fa-tiktok"></i>
+                            Ndiqni @drbashkimaliu
+                        </a>
+                    </div>
+                    <div class="lang-content" data-lang="de">
+                        <h3 class="serif">Folgen Sie für Mehr Weisheit</h3>
+                        <p>Bleiben Sie mit Dr. Bashkim Alius neuesten Gedanken und Lehren auf TikTok verbunden</p>
+                        <a href="https://www.tiktok.com/@drbashkimaliu" target="_blank" class="social-btn">
+                            <i class="fab fa-tiktok"></i>
+                            Folgen @drbashkimaliu
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="lang-content active" data-lang="en">
+                        <h4>Dr. Bashkim Aliu</h4>
+                        <p>Albanian Islamic Scholar, Imam, and community leader dedicated to serving Muslim communities in Switzerland while preserving Albanian Islamic heritage and promoting successful integration into European society.</p>
+                    </div>
+                    <div class="lang-content" data-lang="sq">
+                        <h4>Dr. Bashkim Aliu</h4>
+                        <p>Dijetar Islam Shqiptar, Imam dhe udhëheqës komuniteti i përkushtuar për të shërbyer komunitetet myslimane në Zvicër duke ruajtur trashëgiminë islame shqiptare dhe promovuar integrimin e suksesshëm në shoqërinë evropiane.</p>
+                    </div>
+                    <div class="lang-content" data-lang="de">
+                        <h4>Dr. Bashkim Aliu</h4>
+                        <p>Albanischer islamischer Gelehrter, Imam und Gemeindeleiter, der sich dem Dienst an muslimischen Gemeinschaften in der Schweiz widmet, während er das albanische islamische Erbe bewahrt und eine erfolgreiche Integration in die europäische Gesellschaft fördert.</p>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <div class="lang-content active" data-lang="en">
+                        <h4>Quick Links</h4>
+                        <p><a href="books.html">Books & Publications</a></p>
+                        <p><a href="gallery.html">Photo Gallery</a></p>
+                        <p><a href="quotes.html">Quotes & Wisdom</a></p>
+                        <p><a href="index.html#lectures">Lectures</a></p>
+                        <p><a href="index.html#contact">Contact</a></p>
+                    </div>
+                    <div class="lang-content" data-lang="sq">
+                        <h4>Lidhje të Shpejta</h4>
+                        <p><a href="books.html">Libra dhe Publikime</a></p>
+                        <p><a href="gallery.html">Galeria e Fotove</a></p>
+                        <p><a href="quotes.html">Citate dhe Urtësi</a></p>
+                        <p><a href="index.html#lectures">Ligjërata</a></p>
+                        <p><a href="index.html#contact">Kontakti</a></p>
+                    </div>
+                    <div class="lang-content" data-lang="de">
+                        <h4>Schnelllinks</h4>
+                        <p><a href="books.html">Bücher & Publikationen</a></p>
+                        <p><a href="gallery.html">Fotogalerie</a></p>
+                        <p><a href="quotes.html">Zitate & Weisheit</a></p>
+                        <p><a href="index.html#lectures">Vorträge</a></p>
+                        <p><a href="index.html#contact">Kontakt</a></p>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <div class="lang-content active" data-lang="en">
+                        <h4>Leadership Positions</h4>
+                        <p>Imam - Seebach Mosque</p>
+                        <p>Vice President - KMShZ</p>
+                        <p>Central Presidency - FIDS</p>
+                        <p>Diaspora Community Leader</p>
+                    </div>
+                    <div class="lang-content" data-lang="sq">
+                        <h4>Pozicionet Udhëheqëse</h4>
+                        <p>Imam - Xhamia e Seebach</p>
+                        <p>Nënkryetar - KMShZ</p>
+                        <p>Kryesi Qendror - FIDS</p>
+                        <p>Udhëheqës Komuniteti Diaspora</p>
+                    </div>
+                    <div class="lang-content" data-lang="de">
+                        <h4>Führungspositionen</h4>
+                        <p>Imam - Seebach Moschee</p>
+                        <p>Vizepräsident - KMShZ</p>
+                        <p>Zentralpräsidium - FIDS</p>
+                        <p>Diaspora-Gemeindeleiter</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="lang-content active" data-lang="en">
+                    <p>&copy; 2024 Dr. Bashkim Aliu. All rights reserved. | Dedicated to Islamic scholarship, community service, and diaspora support.</p>
+                </div>
+                <div class="lang-content" data-lang="sq">
+                    <p>&copy; 2024 Dr. Bashkim Aliu. Të gjitha të drejtat e rezervuara. | I përkushtuar për studimet islame, shërbimin e komunitetit dhe mbështetjen e diasporës.</p>
+                </div>
+                <div class="lang-content" data-lang="de">
+                    <p>&copy; 2024 Dr. Bashkim Aliu. Alle Rechte vorbehalten. | Der islamischen Gelehrsamkeit, dem Gemeindedienst und der Diaspora-Unterstützung gewidmet.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- TikTok Embed Script -->
+    <script async src="https://www.tiktok.com/embed.js"></script>
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <script>
+        let currentLang = 'en';
+
+        function switchLanguage(lang) {
+            // Hide all content with current language
+            const currentContent = document.querySelectorAll(`.lang-content[data-lang="${currentLang}"]`);
+            currentContent.forEach(element => {
+                element.classList.remove('active');
+            });
+
+            // Show all content with new language
+            const newContent = document.querySelectorAll(`.lang-content[data-lang="${lang}"]`);
+            newContent.forEach(element => {
+                element.classList.add('active');
+            });
+
+            // Update language buttons
+            const langButtons = document.querySelectorAll('.lang-btn');
+            langButtons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            // Update current language
+            currentLang = lang;
+
+            // Update document language attribute
+            document.documentElement.lang = lang;
+        }
+
+        function toggleMobileMenu(e) {
+            e.preventDefault();
+            const nav = document.querySelector('nav');
+            const toggle = document.querySelector('.mobile-menu-toggle');
+            
+            nav.classList.toggle('mobile-open');
+            toggle.classList.toggle('active');
+        }
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                const nav = document.querySelector('nav');
+                const toggle = document.querySelector('.mobile-menu-toggle');
+                
+                nav.classList.remove('mobile-open');
+                toggle.classList.remove('active');
+            });
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            const nav = document.querySelector('nav');
+            const toggle = document.querySelector('.mobile-menu-toggle');
+            const header = document.querySelector('header');
+            
+            if (!header.contains(e.target) && nav.classList.contains('mobile-open')) {
+                nav.classList.remove('mobile-open');
+                toggle.classList.remove('active');
+            }
+        });
+
+        // Add scroll effect to header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.boxShadow = 'var(--shadow-lg)';
+            } else {
+                header.style.boxShadow = 'var(--shadow-sm)';
+            }
+        });
+    </script>
+</body>
+</html>
